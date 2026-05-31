@@ -47,7 +47,6 @@ table td {
     position: relative;
     color: #000;
     border: 1px solid #000;
-    /* background-color: whitesmoke; */
     font-size: 8px;
     font-weight: 200;
 }
@@ -59,11 +58,6 @@ table td {
     font-size: 20px;
     text-align: center;
 }
-
-.lbw {
-border-right: 1px solid red;
-}
-
 
 .winning,
 .machine {
@@ -77,19 +71,10 @@ color: #0000ff;
 .machine {
 color: red;
 }
-.highlight-row  {
-    background-color: #f5f5dc;
+.lbw {
+border-right: 1px solid red;
 }
-.highlight-winning {
-    color: #fff;
-    background-color: #008000;
-    border-radius: 5px;
-}
-.highlight-machine {
-    color: #fff;
-    background-color: #ff0000;
-    border-radius: 5px;
-}
+
 
 
 
@@ -251,7 +236,6 @@ color: red;
      @media screen and (max-width: 430px) {
         body {
             width: 100%;
-            /* background-color: #f6f6f1; */
         }
         
         table {
@@ -273,13 +257,13 @@ color: red;
             padding: 12px 0;
             
         }
-        table .days {
+        .days {
             width: 10px;
-            font-size: 8px;
+            font-size: 10px;
         }
         .winning,
         .machine {
-            font-size: 16.5px;
+            font-size: 18px !important;
         } 
      }
 
