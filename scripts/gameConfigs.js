@@ -124,11 +124,5 @@ export const gameConfigs = [
     key: 'aseda',
     label: 'Aseda',
     slug: '25aseda',
-  },
-
-
-
-
- 
-  // Add more games here
+  }, 
 ];
