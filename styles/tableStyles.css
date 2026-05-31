@@ -1,10 +1,152 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+table {
+    width: 500px;
+}
+
+.result-game-name {
+    text-align: center;
+    text-transform: uppercase;
+}
+.year {
+    color: #fff;
+    text-align: center;
+    background-color: #2282c7;
+    border: 1px solid #000;
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+table {
+    height: 100%;
+    border-collapse: collapse; 
+    border-left: 2px solid rgba(0, 0, 0, 0.333);
+}
+
+
+table th{
+    background-color: whitesmoke;
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+table td {
+    border-top: 1px solid #000;
+    padding: 5px 0;
+}
+
+.serial-num {
+    text-align: center;
+    border: 1px solid #000;
+    font-size: 10px;
+}
+.days {
+    position: relative;
+    color: #000;
+    border: 1px solid #000;
+    /* background-color: whitesmoke; */
+    font-size: 8px;
+    font-weight: 200;
+}
+
+.table .xMas-tree {
+    position: absolute;
+    top: 8px;
+    right: 5%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.lbw {
+border-right: 1px solid red;
+}
+
+
+.winning,
+.machine {
+text-align: center;
+width: 40px;
+font-size: 20px;
+}
+.winning {
+color: #0000ff;
+}
+.machine {
+color: red;
+}
+.highlight-row  {
+    background-color: #f5f5dc;
+}
+.highlight-winning {
+    color: #fff;
+    background-color: #008000;
+    border-radius: 5px;
+}
+.highlight-machine {
+    color: #fff;
+    background-color: #ff0000;
+    border-radius: 5px;
+}
+
+
+
+.end-of-the-year {
+    color: #0303c6;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.happyNewYear {
+    color: #fff;
+    text-align: center;
+    word-spacing: 10px;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 20px;
+    background-color: #000;
+}
+.symbol {
+    margin: auto 5px;
+    font-size: large;
+}
+.year-twoFour{
+    text-align: center;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: x-large;
+} 
+
+.correction {
+    background-color:rgb(225, 241, 241);
+}
+
+/* ─────────────────────────────────────────
+   ADD THESE AT THE BOTTOM OF table.css
+   All existing styles remain untouched */
+
+/* Game name — red for BI identity */
+.result-game-name {
+   color: #c41c1c !important;
+}
+
+/* Year header — deep blue structural divider */
+.year {
+   background-color: #1a6aa8;
+   color: #fff;
+}
+
+
 /* On small screens: subnav takes over */
 @media (max-width: 768px) {
   body {
     display: block;
-    /* background-color: #daa520; */
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
     /* flex-direction: column; */
   }
   .home-page-header {
@@ -68,9 +210,7 @@
     width: 100%;
     height: 100%;
     padding-top: 30px;
-    /* margin: 2rem 2% auto; */
     background-color: #0000008a;
-    /* background-color: #ff0000; */
     
   }
   .game-link  {
@@ -103,4 +243,92 @@
         .play-store-badge {
             width: 140px;
         }
+    }
+
+
+                      /* Breakpoints */
+     /*(400-430px device)*/  
+     @media screen and (max-width: 430px) {
+        body {
+            width: 100%;
+            /* background-color: #f6f6f1; */
+        }
+        
+        table {
+            width: 400px;
+            width: 98%;
+            background-color: #fff;
+            margin-block-start: 30px;
+        }
+        .game-year {
+          color: #fff;
+          background-color:#2282c7;
+            font-weight: bold;
+            font-size: 17px;
+        }
+      
+        .serial-num {
+            display: block;
+            width: 25px;
+            padding: 12px 0;
+            
+        }
+        table .days {
+            width: 10px;
+            font-size: 8px;
+        }
+        .winning,
+        .machine {
+            font-size: 16.5px;
+        } 
+     }
+
+
+     /*(360-393px device)*/  
+     @media screen and (max-width: 393px) {
+        body {
+            width: 100%;
+        }
+        
+        .PR-table {
+            width: 350px;
+            margin-block-start: 25px;
+        }
+        .year {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .serial-num {
+            width: 30px;
+        }
+        .winning,
+        .machine {
+            font-size: 15px;
+        } 
+     }
+     
+
+    /*(320px device)*/ 
+    @media screen and (max-width: 359px) {
+        body {
+            width: 100%;
+        }
+
+        .PR-table {
+            width: 300px;
+            margin-block-start: 20px;
+
+        }
+        .year {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .line,
+        .serial-num {
+            display: none;
+        }
+        .winning,
+        .machine {
+            font-size: 18px;
+        }  
     }

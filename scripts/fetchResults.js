@@ -1,5 +1,5 @@
-const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results";
-// const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/dummyResults"
+// const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results";
+const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/dummyResults"
 
 function normalizeGameName(gameName) {
     const nameMap = {
