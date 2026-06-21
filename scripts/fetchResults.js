@@ -1,5 +1,6 @@
-const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results";
-// const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/dummyResults"
+// Google Cloud Function endpoint - replace with your actual URL
+const RESULT_API = "https://api.babaijebu.visuallottoboard.com/publicwebgameresults";
+// Fallback: const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results";
 
 function normalizeGameName(gameName) {
     const nameMap = {
@@ -15,11 +16,19 @@ function normalizeGameName(gameName) {
     return nameMap[normalized] || nameMap[gameName] || normalized;
 }
 
-export async function fetchGameResults() {
+export async function fetchGameResults(game = null, year = null) {
     try {
-        const res = await fetch(RESULT_API, {
+        // Build query parameters
+        const params = new URLSearchParams();
+        if (game) params.append('game', game);
+        if (year) params.append('year', year);
+        
+        const url = params.toString() 
+            ? `${RESULT_API}?${params.toString()}` 
+            : RESULT_API;
+
+        const res = await fetch(url, {
             method: "GET",
-            credentials: "include",
             headers: {
               'Content-Type': 'application/json'
             },

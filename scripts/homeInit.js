@@ -53,7 +53,9 @@ async function loadResults() {
         status.textContent = '🔄 Loading latest lotto results...';
         // if (subnav) subnav.style.display = "none";
 
-        const allResults = await fetchGameResults();
+        // Fetch only current year for homepage optimization
+        const currentYear = new Date().getFullYear();
+        const allResults = await fetchGameResults(null, currentYear);
 
         if (!allResults || Object.keys(allResults).length === 0) {
             showError("⚠️ No results available at the moment. Please check back soon.");
