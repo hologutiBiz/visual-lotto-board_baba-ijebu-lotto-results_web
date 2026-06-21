@@ -8,30 +8,6 @@ import { showError } from '../utils/showError.js';
 const container = document.getElementById('homePageContainer');
 const status = document.getElementById('statusMessage');
 
-// document.addEventListener("DOMContentLoaded", async () => {
-//     await dbReady;
-//     const info = await getLastUpdateInfo();
-//     const infoContainer = document.getElementById("infoContainer");
-
-//     if (info && infoContainer) {
-//           const date = info.dateUpdated.toDate();
-//           const formatted = date.toLocaleString("en-GB", {
-//               day: "numeric", 
-//               month: "long", 
-//               year: "numeric",
-//               hour: "2-digit", 
-//               minute: "2-digit"
-//         });
-
-//         infoContainer.innerHTML = `
-//             <small>📝 ${info.description}: </small>
-//             <time>${formatted}</time>
-//         `;
-//     } else {
-//         console.warn("🚫 UpdateInfo render failed.");
-//     }
-// });
- 
 
 // 📬 Link buttons
 function linkButton() {
