@@ -1,4 +1,3 @@
-// Google Cloud Function endpoint - replace with your actual URL
 const RESULT_API = "https://api.babaijebu.visuallottoboard.com/publicwebgameresults";
 // Fallback: const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results";
 
