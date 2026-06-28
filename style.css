@@ -276,13 +276,13 @@ textarea {
         
 }
 
-    .footer-content {
-        width: 400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-    }
+.footer-content {
+    /* width: 400px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
 
     .footer-section h3 {
         color: #fff;
