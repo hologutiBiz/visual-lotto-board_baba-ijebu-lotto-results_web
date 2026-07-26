@@ -108,10 +108,20 @@
         justify-content: space-between;
     }
 
+    .brand-wrapper { 
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .brand-props {
+        display: flex; 
+        align-items: center; 
+        gap: 10px;
+    }
+
     /* Show the hamburger icon on mobile */
     .menu-toggle {
         display: block !important;
-        order: -1;
     }
 
     /* Actions hidden by default, shown only when menu is toggled open */
@@ -145,13 +155,21 @@
     font-size: 13px;
     font-weight: 500;
 }
-.megapot-teaser-bar i { font-size: 16px; }
-
-@media (max-width: 768px) {
-    .megapot-teaser-bar { display: flex; }
+.megapot-teaser-bar i { 
+    font-size: 16px; 
 }
 
-/* Mobile page heading (replaces old search box) */
+
+@media (max-width: 768px) {
+    .mobile-page-heading { 
+        display: block; 
+    }
+    .megapot-teaser-bar { 
+        display: flex; 
+    }
+}
+
+/* Mobile page heading */
 .mobile-page-heading {
     display: none;
     text-align: center;
@@ -162,9 +180,7 @@
     margin: 0;
     color: #222;
 }
-@media (max-width: 768px) {
-    .mobile-page-heading { display: block; }
-}
+
 
 /* ============================================================
    DESKTOP / MOBILE VIEW SWITCH

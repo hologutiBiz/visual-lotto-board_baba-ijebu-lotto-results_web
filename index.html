@@ -63,15 +63,17 @@
    <!-- ============ SHARED HEADER (used by both desktop and mobile views) ============ -->
    <header class="home-page-header" id="homePageHeader">
       <div class="brand-wrapper">
-         <a href="#" aria-current="page">
-            <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1749649983/VLB_logo_gpiyzr.png" alt="Logo" width="40"/>
-         </a>
-         <span class="brand-name">Visual Lotto Board</span>
+         <div class="brand-props">
+            <a href="#" aria-current="page">
+               <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1749649983/VLB_logo_gpiyzr.png" alt="Logo" width="40"/>
+            </a>
+            <span class="brand-name">Visual Lotto Board</span>
+         </div>
+      
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+         </button>
       </div>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-         <i class="fas fa-bars"></i>
-      </button>
 
       <div class="actions" id="headerActions">
          <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
@@ -144,7 +146,6 @@
 
    <!-- ============ MOBILE VIEW ============ -->
    <div class="mobile-view">
-
       <a class="megapot-teaser-bar" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-teaser" data-banner-position="header_teaser">
          <span>Megapot &middot; play the internet lottery</span>
          <i class="ti ti-arrow-right"></i>
