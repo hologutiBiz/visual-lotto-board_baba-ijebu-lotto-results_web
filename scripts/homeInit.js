@@ -1,7 +1,6 @@
 import { fetchGameResults } from './fetchResults.js';
 import { gameConfigs } from './gameConfigs.js';
 import { renderGameResults } from './renderGame.js';
-// import { getLastUpdateInfo, dbReady } from './firebase.js';
 import { showError } from '../utils/showError.js';
 
 // const subnav = document.getElementById('subnav');
@@ -9,7 +8,7 @@ const container = document.getElementById('homePageContainer');
 const status = document.getElementById('statusMessage');
 
 
-// 📬 Link buttons
+//Link buttons
 function linkButton() {
     document.querySelector("#subscribeBtn")?.addEventListener("click", () => {
         window.location.href = "https://lottoforecast.visuallottoboard.com/subscription";
@@ -21,7 +20,39 @@ function linkButton() {
 }
 linkButton();
 
-// 🔄 Load results directly (no session validation)
+// Hamburger menu toggle (mobile only — CSS hides this button on desktop)
+function initMenuToggle() {
+    const toggleBtn = document.getElementById('menuToggle');
+    const actions = document.getElementById('headerActions');
+    toggleBtn?.addEventListener('click', () => {
+        actions.classList.toggle('menu-open');
+    });
+}
+
+initMenuToggle();
+
+// Megapot sticky banner: show only when the in-article banner is out of view
+function initMegapotSticky() {
+    const sticky = document.getElementById('megapotSticky');
+    const trigger = document.getElementById('megapotInArticle');
+    if (!sticky || !trigger) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            sticky.classList.toggle('visible', !entry.isIntersecting);
+        });
+    }, { threshold: 0 });
+
+    observer.observe(trigger);
+
+    document.getElementById('megapotClose')?.addEventListener('click', () => {
+        sticky.classList.remove('visible');
+        observer.disconnect(); // stop re-showing after manual close
+    });
+}
+initMegapotSticky();
+
+//Load results directly (no session validation)
 loadResults();
 
 async function loadResults() {
@@ -70,23 +101,3 @@ async function loadResults() {
     }
 }
 
-// 🎯 Megapot sticky banner: show only when the in-article banner is out of view
-function initMegapotSticky() {
-    const sticky = document.getElementById('megapotSticky');
-    const trigger = document.getElementById('megapotInArticle');
-    if (!sticky || !trigger) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            sticky.classList.toggle('visible', !entry.isIntersecting);
-        });
-    }, { threshold: 0 });
-
-    observer.observe(trigger);
-
-    document.getElementById('megapotClose')?.addEventListener('click', () => {
-        sticky.classList.remove('visible');
-        observer.disconnect(); // stop re-showing after manual close
-    });
-}
-initMegapotSticky();
