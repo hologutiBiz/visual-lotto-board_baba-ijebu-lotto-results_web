@@ -69,3 +69,24 @@ async function loadResults() {
       // if (subnav) subnav.style.display = "none";
     }
 }
+
+// 🎯 Megapot sticky banner: show only when the in-article banner is out of view
+function initMegapotSticky() {
+    const sticky = document.getElementById('megapotSticky');
+    const trigger = document.getElementById('megapotInArticle');
+    if (!sticky || !trigger) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            sticky.classList.toggle('visible', !entry.isIntersecting);
+        });
+    }, { threshold: 0 });
+
+    observer.observe(trigger);
+
+    document.getElementById('megapotClose')?.addEventListener('click', () => {
+        sticky.classList.remove('visible');
+        observer.disconnect(); // stop re-showing after manual close
+    });
+}
+initMegapotSticky();

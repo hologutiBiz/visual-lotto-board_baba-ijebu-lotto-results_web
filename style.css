@@ -469,10 +469,52 @@ textarea {
         }
     }
 
-/* Megapot in-content banner */
-.megapot-banner-wrapper {
+/* Mobile page heading (replaces search box) */
+.mobile-page-heading {
+    display: none;
     text-align: center;
-    margin: 1.5rem auto;
+    padding: 12px 16px 4px;
+}
+.mobile-page-heading h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #222;
+}
+
+/* Popular games section */
+.popular-games-wrapper { display: none; }
+.section-label {
+    font-size: 13px;
+    color: #666;
+    padding: 0 16px;
+    margin: 12px 0 8px;
+}
+.popular-games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 16px;
+}
+.popular-games-grid .game-link {
+    flex-direction: column;
+    border: 2px solid #2282c7;
+    border-radius: 10px;
+    background: #fff;
+    padding: 16px 0;
+}
+.all-games-label { display: none; }
+
+/* Game icons (Tabler) */
+.game-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* In-content banner inside the grid — spans full width */
+.megapot-banner-wrapper {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0.5rem 0;
 }
 .megapot-banner {
     max-width: 90%;
@@ -482,16 +524,19 @@ textarea {
 .megapot-desktop-banner { display: none; }
 .megapot-mobile-banner { display: inline-block; width: 300px; }
 
-/* Desktop: offset to clear the fixed sidebar, matches .home-page-main */
-@media (min-width: 769px) {
-    .megapot-banner-wrapper {
-        margin-left: 210px;
-    }
-    .megapot-desktop-banner { display: inline-block; width: 728px; }
-    .megapot-mobile-banner { display: none; }
+/* Buy Ticket button in header */
+.buy-ticket-btn {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #daa520;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
-/* Megapot sticky banner (bottom of screen, all devices) */
+/* Sticky banner: hidden by default, shown via JS when in-article banner scrolls out of view */
 .megapot-sticky-banner {
     position: fixed;
     bottom: 0;
@@ -503,6 +548,11 @@ textarea {
     align-items: center;
     justify-content: center;
     padding: 6px 30px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+.megapot-sticky-banner.visible {
+    transform: translateY(0);
 }
 .megapot-sticky-banner img {
     height: auto;
@@ -510,11 +560,6 @@ textarea {
 }
 .megapot-sticky-desktop { display: none; width: 728px; }
 .megapot-sticky-mobile { display: inline-block; width: 320px; }
-
-@media (min-width: 769px) {
-    .megapot-sticky-desktop { display: inline-block; }
-    .megapot-sticky-mobile { display: none; }
-}
 
 .megapot-close {
     position: absolute;
@@ -530,4 +575,24 @@ textarea {
     border-radius: 50%;
     cursor: pointer;
     line-height: 1;
+}
+
+/* Mobile-specific layout */
+@media (max-width: 768px) {
+    .mobile-page-heading { display: block; }
+    .popular-games-wrapper { display: block; }
+    .all-games-label { display: block; }
+    .game-links-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 769px) {
+    .megapot-desktop-banner { display: inline-block; width: 728px; }
+    .megapot-mobile-banner { display: none; }
+    .megapot-sticky-desktop { display: inline-block; }
+    .megapot-sticky-mobile { display: none; }
 }
