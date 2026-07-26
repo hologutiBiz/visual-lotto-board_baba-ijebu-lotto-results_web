@@ -17,14 +17,12 @@
    <meta name="description" content="View updated lotto results from 25 games including Diamond, Peoples, Bingo, Jackpot, Super, National, and more. Powered by Visual Lotto Board.">
    <meta name="author" content="Visual Lotto Result" />
 
-         <!-- facebook -->
    <meta property="og:title" content="Baba Ijebu (Premier) Lotto Results | Visual Lotto Board">
    <meta property="og:description" content="View updated lotto results from 25 games including Diamond, Peoples, Bingo, JAckpot, Super, National, and more. Powered by Visual Lotto Board."> 
    <meta property="og:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1751113131/vlb-v2-free-user-cover_fsl1sl.png"> 
    <meta property="og:image:alt" content="Visual Lotto Baord logo, name and picture of game available on the webpage"> 
    <meta  property="og:url" content="https://premier-lotto-babaijebu-results.visuallottoboard.com/">
 
-            <!-- twitter-->
    <meta name="twitter:card" content="summary_large_image">
    <meta name="twitter:site" content="@VisuaLottoBoard">
    <meta name="twitter:title" content="Baba Ijebu (Premier) Lotto Results | Visual Lotto Board">
@@ -39,7 +37,8 @@
    <link rel="manifest" href="site.webmanifest">
       
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
+   <link rel="stylesheet" href="new-style.css">
    <link rel="stylesheet" href="/styles/tableStyles.css" />
   
    <!-- email js -->
@@ -61,6 +60,7 @@
           height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
 
+   <!-- ============ SHARED HEADER (used by both desktop and mobile views) ============ -->
    <header class="home-page-header" id="homePageHeader">
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
          <i class="fas fa-bars"></i>
@@ -77,101 +77,149 @@
          <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
          <button class="login-btn" id="loginBtn">🔐 Login</button>
          <button class="report-btn" id="reportBtn">📄 Report</button>
+         <a class="buy-ticket-btn" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" id="megapot-link-menu" data-banner-position="menu">🎟️ Buy Ticket</a>
       </div>
-
    </header>
 
-   <nav class="subnav" id="subnav">
-      <a  class="counterpart" href="https://lottoclassificationchart.visuallottoboard.com/" target="_blank">
-         <p class="counterpart-span">Classification chart</p>
-         <img class="counterpart-icon" src="https://res.cloudinary.com/ddatfadov/image/upload/v1751107320/iPhone-12-PRO-lottoclassificationchart.visuallottoboard.com_c7aj0w.png" alt="" width="">
-      </a>
+   <!-- ============ DESKTOP VIEW ============ -->
+   <div class="desktop-view">
 
-      <a href="https://play.google.com/store/apps/details?id=com.visuallottoboard.babaijeburesults" class="download-btn" target="_blank">
-         <p class="counterpart-span">📱 Download mobile app</p>
-      </a>
+      <!-- Left: Sidebar -->
+      <nav class="desktop-sidebar" id="desktopSidebar">
+         <a class="counterpart" href="https://lottoclassificationchart.visuallottoboard.com/" target="_blank">
+            <p class="counterpart-span">Classification chart</p>
+         </a>
+         <!-- <a href="https://play.google.com/store/apps/details?id=com.visuallottoboard.babaijeburesults" class="download-btn" target="_blank">
+            <p class="counterpart-span">📱 Download mobile app</p>
+         </a> -->
+         <div class="desktop-game-links">
+            <a class="game-link" href="/games/1diamond.html" target="_blank"><i class="ti ti-diamond game-icon"></i><span>Diamond</span></a>
+            <a class="game-link" href="/games/2peoples.html" target="_blank"><i class="ti ti-users game-icon"></i><span>Peoples</span></a>
+            <a class="game-link" href="/games/3bingo.html" target="_blank"><i class="ti ti-disc game-icon"></i><span>Bingo</span></a>
+            <a class="game-link" href="/games/4metro.html" target="_blank"><i class="ti ti-train game-icon"></i><span>Metro</span></a>
+            <a class="game-link" href="/games/5inter.html" target="_blank"><i class="ti ti-world game-icon"></i><span>International</span></a>
+            <a class="game-link" href="/games/6gold.html" target="_blank"><i class="ti ti-coin game-icon"></i><span>Gold</span></a>
+            <a class="game-link" href="/games/7O6.html" target="_blank"><i class="ti ti-number-6-small game-icon"></i><span>06</span></a>
+            <a class="game-link" href="/games/8jackpot.html" target="_blank"><i class="ti ti-coins game-icon"></i><span>Jackpot</span></a>
+            <a class="game-link" href="/games/9clubmaster.html" target="_blank"><i class="ti ti-cards game-icon"></i><span>Clubmaster</span></a>
+            <a class="game-link" href="/games/10super.html" target="_blank"><i class="ti ti-bolt game-icon"></i><span>Super</span></a>
+            <a class="game-link" href="/games/11tota.html" target="_blank"><i class="ti ti-refresh game-icon"></i><span>Tota</span></a>
+            <a class="game-link" href="/games/12mark-II.html" target="_blank"><i class="ti ti-shield game-icon"></i><span>Mark II</span></a>
+            <a class="game-link" href="/games/13vag.html" target="_blank"><i class="ti ti-puzzle game-icon"></i><span>Vag</span></a>
+            <a class="game-link" href="/games/14enugu.html" target="_blank"><i class="ti ti-map-pin game-icon"></i><span>Enugu</span></a>
+            <a class="game-link" href="/games/15lucky.html" target="_blank"><i class="ti ti-clover game-icon"></i><span>Lucky</span></a>
+            <a class="game-link" href="/games/16fairchance.html" target="_blank"><i class="ti ti-scale game-icon"></i><span>Fairchance</span></a>
+            <a class="game-link" href="/games/17royal.html" target="_blank"><i class="ti ti-crown game-icon"></i><span>Royal</span></a>
+            <a class="game-link" href="/games/18msp.html"><i class="ti ti-calendar-event game-icon"></i><span>Monday Special</span></a>
+            <a class="game-link" href="/games/19luckyG.html" target="_blank"><i class="ti ti-clover game-icon"></i><span>Lucky-G</span></a>
+            <a class="game-link" href="/games/20midweek.html" target="_blank"><i class="ti ti-calendar-week game-icon"></i><span>Midweek</span></a>
+            <a class="game-link" href="/games/21fortune.html" target="_blank"><i class="ti ti-coins game-icon"></i><span>Fortune</span></a>
+            <a class="game-link" href="/games/22bonanza.html"><i class="ti ti-confetti game-icon"></i><span>Bonanza</span></a>
+            <a class="game-link" href="/games/23premierking.html" target="_blank"><i class="ti ti-crown game-icon"></i><span>Premier King</span></a>
+            <a class="game-link" href="/games/24national.html" target="_blank"><i class="ti ti-trophy game-icon"></i><span>National</span></a>
+            <a class="game-link" href="/games/25aseda.html" target="_blank"><i class="ti ti-heart-handshake game-icon"></i><span>Aseda</span></a>
+            <a class="green-lotto-link" href="https://green-lotto-result.visuallottoboard.com" target="_blank"><span>View Green Lotto Results</span></a>
+         </div>
+      </nav>
 
-      <div class="game-links-wrapper">
-         <a class="game-link" href="/games/1diamond.html" target="_blank">
-            <span class="emoji-icon game-icon" role="img" aria-label="Diamond">💎</span>
-            <span>Diamond</span>
-         </a>
-         <a class="game-link" href="/games/2peoples.html" target="_blank">
-            <span class="game-icon">👥</span>
-            <span>Peoples</span>
-         </a>
-         <a class="game-link" href="/games/3bingo.html" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2674/2674559.png" alt="Bingo Ball" class="game-icon" width="20"/><span>Bingo</span>
-         </a>
-         <a class="game-link game-link" href="/games/4metro.html" target="_blank"><span class="game-icon">🚇</span><span>Metro</span></a>
-         <a class="game-link" href="/games/5inter.html" target="_blank"><span class="game-icon">🌍</span><span>International</span></a>
-         <a class="game-link" href="/games/6gold.html" target="_blank"><span class="game-icon">🪙</span><span>Gold</span></a>
-         <a class="game-link" href="/games/7O6.html" target="_blank"><span class="game-icon">6️⃣</span><span>06</span></a>
-         <a class="game-link" href="/games/8jackpot.html" target="_blank"><span class="game-icon">🎰</span><span>Jackpot</span></a>
-         <a class="game-link" href="/games/9clubmaster.html" target="_blank"><span class="game-icon">♣️</span><span>Clubmaster</span></a>
-         <a class="game-link" href="/games/10super.html" target="_blank"><span class="game-icon">💥</span><span>Super</span></a>
-         <a class="game-link" href="/games/11tota.html" target="_blank"><span class="game-icon">🌀</span><span>Tota</span></a>
-         <a class="game-link" href="/games/12mark-II.html" target="_blank"><span class="game-icon">🛡️</span><span>Mark II</span></a>
-         <a class="game-link" href="/games/13vag.html" target="_blank"><span class="game-icon">🧩</span><span>Vag</span></a>
-         <a class="game-link" href="/games/14enugu.html" target="_blank"><span class="game-icon">🏞️</span><span>Enugu</span></a>
-         <a class="game-link" href="/games/15lucky.html" target="_blank"><span class="game-icon">🍀</span><span>Lucky</span></a>
-         <a class="game-link" href="/games/16fairchance.html" target="_blank"><span class="game-icon">⚖️</span><span>Fairchance</span></a>
-         <a class="game-link" href="/games/17royal.html" target="_blank"><span class="game-icon">♛</span><span>Royal</span></a>
-         <a class="game-link" href="/games/18msp.html">
-            <span class="game-icon">📅</span>
-            <span>Monday Special</span>
-         </a>
-         <a class="game-link" href="/games/19luckyG.html" target="_blank">
-            <span class="game-icon">🍀🅖</span>
-            <span>Lucky-G</span>
-         </a>
-         <a class="game-link" href="/games/20midweek.html" target="_blank">
-            <span class="game-icon">📆</span>
-            <span>Midweek</span>
-         </a>
-         <a class="game-link" href="/games/21fortune.html" target="_blank">
-            <span class="game-icon">💰</span>
-            <span>Fortune</span>
-         </a>
-         <a class="game-link" href="/games/22bonanza.html">
-            <span class="game-icon">🎉</span>
-            <span>Bonanza</span>
-         </a>
-         <a class="game-link" href="/games/23premierking.html" target="_blank"><span class="game-icon">👑</span><span>Premier King</span></a>
-         <a class="game-link" href="/games/24national.html" target="_blank">
-            <span class="game-icon">🏆</span>
-            <span>National</span>
-         </a>
-         <a class="game-link" href="/games/25aseda.html" target="_blank">
-            <span class="game-icon">🙏</span>
-            <span>Aseda</span>
-         </a>
-         <a class="green-lotto-link" href="https://green-lotto-result.visuallottoboard.com" target="_blank">
-            <span>View Green Lotto Results</span>
-         </a>
-
+      <!-- Middle: Game results, rendered side-by-side by homeInit.js -->
+      <div class="desktop-main-column">
+         <h1>Baba Ijebu <span style="color: #ff0000;">(Premier Lotto)</span> Results</h1>
+         <div class="status-message" id="statusMessage">Loading results. Please wait...</div>
+         <main class="home-page-main" id="homePageContainer"></main>
       </div>
-   </nav>
 
-   <!-- Megapot In-Content Banner -->
-   <div class="megapot-banner-wrapper">
-      <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-inarticle" data-banner-position="in_article">
-         <img src="/assets/megapot/2184 x 270.png" alt="Megapot - Play to Win" class="megapot-banner megapot-desktop-banner">
-         <img src="/assets/megapot/900 x 750.png" alt="Megapot - Play to Win" class="megapot-banner megapot-mobile-banner">
-      </a>
+      <!-- Right: Megapot promo column -->
+      <aside class="desktop-promo-column">
+         <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-desktop-promo" data-banner-position="desktop_promo_column">
+            <img src="/assets/megapot/900 x 750.png" alt="Megapot - Play to Win" class="promo-image">
+         </a>
+         <div class="promo-ticker">
+            <span>🎰 Play to win ₦300,000,000</span>
+            <span>🍀 New draw every week</span>
+            <span>💸 Paid out instantly</span>
+         </div>
+      </aside>
    </div>
-   
-   <h1>Baba Ijebu <span style="color: #ff0000;">(Premier Lotto)</span> Results</h1>
 
-   <div class="status-message" id="statusMessage">Loading results. Please wait...</div>
-   <!-- <div class="update-meta" id="infoContainer"></div>   -->
+   <!-- ============ MOBILE VIEW ============ -->
+   <div class="mobile-view">
 
-   <main class="home-page-main" id="homePageContainer"></main>
+      <a class="megapot-teaser-bar" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-teaser" data-banner-position="header_teaser">
+         <span>Megapot &middot; play the internet lottery</span>
+         <i class="ti ti-arrow-right"></i>
+      </a>
+
+      <div class="mobile-page-heading">
+         <h2>Baba Ijebu Lotto Results</h2>
+      </div>
+
+      <nav class="mobile-nav" id="mobileNav">
+         <div class="popular-games-wrapper">
+            <p class="section-label">Popular games</p>
+            <div class="popular-games-grid">
+               <a class="game-link popular" href="/games/1diamond.html" target="_blank" data-game-name="diamond">
+                  <i class="ti ti-diamond game-icon"></i>
+                  <span>Diamond</span>
+               </a>
+               <a class="game-link popular" href="/games/2peoples.html" target="_blank" data-game-name="peoples">
+                  <i class="ti ti-users game-icon"></i>
+                  <span>Peoples</span>
+               </a>
+               <a class="game-link popular" href="/games/19luckyG.html" target="_blank" data-game-name="lucky-g">
+                  <i class="ti ti-clover game-icon"></i>
+                  <span>Lucky-G</span>
+               </a>
+               <a class="game-link popular" href="/games/23premierking.html" target="_blank" data-game-name="premier king">
+                  <i class="ti ti-crown game-icon"></i>
+                  <span>Premier King</span>
+               </a>
+            </div>
+         </div>
+
+         <p class="section-label all-games-label">All games</p>
+         <div class="mobile-game-links">
+            <a class="game-link" href="/games/1diamond.html" target="_blank"><i class="ti ti-diamond game-icon"></i><span>Diamond</span></a>
+            <a class="game-link" href="/games/2peoples.html" target="_blank"><i class="ti ti-users game-icon"></i><span>Peoples</span></a>
+            <a class="game-link" href="/games/3bingo.html" target="_blank"><i class="ti ti-disc game-icon"></i><span>Bingo</span></a>
+            <a class="game-link" href="/games/4metro.html" target="_blank"><i class="ti ti-train game-icon"></i><span>Metro</span></a>
+            <a class="game-link" href="/games/5inter.html" target="_blank"><i class="ti ti-world game-icon"></i><span>International</span></a>
+            <a class="game-link" href="/games/6gold.html" target="_blank"><i class="ti ti-coin game-icon"></i><span>Gold</span></a>
+
+            <!-- Megapot in-content banner: after the first 6 games -->
+            <div class="megapot-banner-wrapper" id="megapotInArticle">
+               <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-inarticle" data-banner-position="in_article">
+                  <img src="/assets/megapot/900 x 750.png" alt="Megapot - Play to Win" class="megapot-banner">
+               </a>
+            </div>
+
+            <a class="game-link" href="/games/7O6.html" target="_blank"><i class="ti ti-number-6-small game-icon"></i><span>06</span></a>
+            <a class="game-link" href="/games/8jackpot.html" target="_blank"><i class="ti ti-coins game-icon"></i><span>Jackpot</span></a>
+            <a class="game-link" href="/games/9clubmaster.html" target="_blank"><i class="ti ti-cards game-icon"></i><span>Clubmaster</span></a>
+            <a class="game-link" href="/games/10super.html" target="_blank"><i class="ti ti-bolt game-icon"></i><span>Super</span></a>
+            <a class="game-link" href="/games/11tota.html" target="_blank"><i class="ti ti-refresh game-icon"></i><span>Tota</span></a>
+            <a class="game-link" href="/games/12mark-II.html" target="_blank"><i class="ti ti-shield game-icon"></i><span>Mark II</span></a>
+            <a class="game-link" href="/games/13vag.html" target="_blank"><i class="ti ti-puzzle game-icon"></i><span>Vag</span></a>
+            <a class="game-link" href="/games/14enugu.html" target="_blank"><i class="ti ti-map-pin game-icon"></i><span>Enugu</span></a>
+            <a class="game-link" href="/games/15lucky.html" target="_blank"><i class="ti ti-clover game-icon"></i><span>Lucky</span></a>
+            <a class="game-link" href="/games/16fairchance.html" target="_blank"><i class="ti ti-scale game-icon"></i><span>Fairchance</span></a>
+            <a class="game-link" href="/games/17royal.html" target="_blank"><i class="ti ti-crown game-icon"></i><span>Royal</span></a>
+            <a class="game-link" href="/games/18msp.html"><i class="ti ti-calendar-event game-icon"></i><span>Monday Special</span></a>
+            <a class="game-link" href="/games/19luckyG.html" target="_blank"><i class="ti ti-clover game-icon"></i><span>Lucky-G</span></a>
+            <a class="game-link" href="/games/20midweek.html" target="_blank"><i class="ti ti-calendar-week game-icon"></i><span>Midweek</span></a>
+            <a class="game-link" href="/games/21fortune.html" target="_blank"><i class="ti ti-coins game-icon"></i><span>Fortune</span></a>
+            <a class="game-link" href="/games/22bonanza.html"><i class="ti ti-confetti game-icon"></i><span>Bonanza</span></a>
+            <a class="game-link" href="/games/23premierking.html" target="_blank"><i class="ti ti-crown game-icon"></i><span>Premier King</span></a>
+            <a class="game-link" href="/games/24national.html" target="_blank"><i class="ti ti-trophy game-icon"></i><span>National</span></a>
+            <a class="game-link" href="/games/25aseda.html" target="_blank"><i class="ti ti-heart-handshake game-icon"></i><span>Aseda</span></a>
+            <a class="green-lotto-link" href="https://green-lotto-result.visuallottoboard.com" target="_blank"><span>View Green Lotto Results</span></a>
+         </div>
+      </nav>
+   </div>
 
    <div id="reportModal" class="modal hidden">
       <div class="modal-content">
          <h2>Report an Issue</h2>
-
          <div class="channel-options">
             <a class="media" href="https://twitter.com/visuaLottoBoard" target="_blank" aria-label="connect on our X Page" rel="no-referrer">
                <i class="fa-brands fa-x-twitter" ></i>
@@ -180,18 +228,15 @@
                <i class="fa-brands fa-facebook-f"></i>
             </a>
          </div>
-
          <textarea id="reportMessage" placeholder="Describe the issue you encountered..."></textarea>
-
          <div class="modal-actions">
             <button class="send-report-btn" id="sendReportBtn">Submit Report</button>
             <button class="close-modal-btn" id="closeModalBtn">Cancel</button>
          </div>
       </div>
-
-            <!-- <p class="info" style="font-size: 1.5rem; background-color: red; color: white; text-align: center;">We are having issue updating results. Our technical teams are already working to fix this</p> -->
    </div>
 
+   <!-- ============ SHARED FOOTER ============ -->
    <footer class="site-footer">
       <div class="footer-content">
          <div class="footer-section">
@@ -254,11 +299,10 @@
       </div>
    </footer>
 
-   <!-- Megapot Sticky Banner (bottom of screen, all devices) -->
-   <div class="megapot-sticky-banner" id="megapotSticky">
+   <!-- Megapot Sticky Banner (mobile only — desktop has the dedicated promo column instead) -->
+   <div class="megapot-sticky-banner hidden-initial" id="megapotSticky">
       <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-sticky" data-banner-position="sticky">
-         <img src="/assets/megapot/2184 x 270.png" alt="Megapot - Play to Win" class="megapot-sticky-desktop">
-         <img src="/assets/megapot/960 x 150 .png" alt="Megapot - Play to Win" class="megapot-sticky-mobile">
+         <img src="/assets/megapot/960 x 150 .png" alt="Megapot - Play to Win">
       </a>
       <button class="megapot-close" id="megapotClose" aria-label="Close ad">&times;</button>
    </div>
