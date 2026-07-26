@@ -12,11 +12,11 @@ const status = document.getElementById('statusMessage');
 // 📬 Link buttons
 function linkButton() {
     document.querySelector("#subscribeBtn")?.addEventListener("click", () => {
-        window.location.href = "https://app.visuallottoboard.com/subscription";
+        window.location.href = "https://lottoforecast.visuallottoboard.com/subscription";
     });
 
     document.querySelector("#loginBtn")?.addEventListener("click", () => {
-        window.location.href = "https://app.visuallottoboard.com/";
+        window.location.href = "https://lottoforecast.visuallottoboard.com/";
     });
 }
 linkButton();

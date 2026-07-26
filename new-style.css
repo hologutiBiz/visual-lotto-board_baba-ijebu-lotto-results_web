@@ -6,6 +6,7 @@
    padding: 0;
 }
 
+
 /* ============================================================
    HEADER
    ============================================================ */
@@ -178,6 +179,7 @@
         gap: 24px;
         align-items: start;
         padding: 24px;
+        background-color: #f9f9f9;
     }
     .mobile-view { display: none; }
 }
@@ -189,6 +191,7 @@
     gap: 0.5rem;
     position: sticky;
     top: 90px;
+    background-color: #fff;
 }
 .desktop-game-links {
     display: flex;
@@ -207,6 +210,7 @@
     overflow-x: auto;
     scroll-snap-type: inline mandatory;
     scroll-behavior: smooth;
+    background-color: #fff;
 }
 
 /* Desktop: Right promo column */
@@ -217,6 +221,7 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    background-color: #fff;
 }
 .promo-image {
     width: 100%;
@@ -303,8 +308,6 @@
 /* ============================================================
    SIDEBAR NAV (desktop fixed sidebar / mobile full-page menu)
    ============================================================ */
-/* NOTE: the old .subnav fixed-sidebar approach has been replaced by
-   .desktop-sidebar (see DESKTOP / MOBILE VIEW SWITCH section below) */
 .counterpart {
   color: #daa520;
   width: fit-content;
@@ -705,6 +708,10 @@ textarea {
       grid-template-rows: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+   }
+
+   #megapotClose {
+        visibility: hidden;
    }
 }
 
