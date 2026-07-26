@@ -2,119 +2,25 @@
 <html lang="en">
 <head>
 
-      <!-- Google Tag Manager -->
+   <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
          })(window,document,'script','dataLayer','GTM-M9582TWK');
-      </script>     
-      <!-- End Google Tag Manager -->
-
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274" crossorigin="anonymous"></script>
+      </script>      
+   <!-- End Google Tag Manager -->
 
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Lucky BabaIjebu Results | Visual Lotto Board</title>
-   <meta name="description" content="Live BabaIjebu draw results for LUCKY lotto game.">
+   <title>BabaIjebu Diamond Results | Visual Lotto Board</title>
+   <meta name="description" content="Live BabaIjebu draw results for DIAMOND lotto game">
   
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-   <link rel="stylesheet" href="../style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
    <link rel="stylesheet" href="/styles/tableStyles.css" />
-
-   <style>
-      body {
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         text-align: center;
-      }
-
-      .footer-content {
-        width: 400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-    }
-
-    .footer-section h3 {
-        color: #fff;
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-        border-bottom: 2px solid #2282c7;
-        display: inline-block;
-        padding-bottom: 5px;
-    }
-
-    .footer-section p {
-        font-size: 0.9rem;
-    }
-
-    .footer-links {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links li {
-        margin-bottom: 10px;
-    }
-
-    .footer-links a {
-        color: #bbb;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-        color: #2282c7;
-    }
-
-    .disclaimer-box {
-        font-size: 0.8rem;
-        background: #2a2a2a;
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 20px;
-        border-left: 4px solid #2282c7;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        font-size: 0.85rem;
-    }
-
-    .eighteen-plus {
-        display: inline-block;
-        background: #2282c7;
-        color: white;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-weight: bold;
-        margin-right: 10px;
-    }
-
-    .app-download-section {
-        margin-top: 15px;
-    }
-
-    .play-store-badge {
-        width: 160px; /* Standard size for badges */
-        height: auto;
-        transition: transform 0.2s ease;
-        display: inline-block;
-    }
-
-    .play-store-badge:hover {
-        transform: scale(1.05); /* Slight pop effect on hover */
-    }
-     
-   </style>
+   <link rel="stylesheet" href="/styles/megapot.css">
 
    <!-- Ad Click Prevention Script -->
    <script>
@@ -180,31 +86,129 @@
              <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9582TWK"
           height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
-      
+
+   <!-- ============ SHARED HEADER ============ -->
    <header class="home-page-header" id="homePageHeader">
-       <div class="brand-wrapper">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+         <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="brand-wrapper">
          <a href="/" aria-current="page">
             <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1749649983/VLB_logo_gpiyzr.png" alt="Logo" width="40"/>
          </a>
          <span class="brand-name">Visual Lotto Board</span>
       </div>
 
-      
+      <div class="actions" id="headerActions">
+         <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
+         <button class="login-btn" id="loginBtn">🔐 Login</button>
+         <button class="report-btn" id="reportBtn">📄 Report</button>
+         <a class="buy-ticket-btn" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" id="megapot-link-menu" data-banner-position="menu">🎟️ Buy Ticket</a>
+      </div>
+   </header>
 
-      <h2>LUCKY</h2>
-    </header>
+   <!-- Game switcher links, reused in both desktop sidebar and mobile chip strip.
+        loadGame.js marks whichever data-slug matches the current page as "active". -->
 
-      <!--  Dynamic nav link in Nav-link -->
-    <div class="each-game-active-wrapper"></div>
-    <nav id="subnav"></nav>
+   <!-- ============ DESKTOP VIEW ============ -->
+   <div class="desktop-view">
 
-    <div class="status-message" id="statusMessage">Loading Lucky results...</div>
+      <nav class="desktop-sidebar" id="desktopSidebar">
+         <div class="desktop-game-links" id="desktopGameLinks">
+            <a class="game-link" href="/games/1diamond.html" data-slug="1diamond"><i class="ti ti-diamond game-icon"></i><span>Diamond</span></a>
+            <a class="game-link" href="/games/2peoples.html" data-slug="2peoples"><i class="ti ti-users game-icon"></i><span>Peoples</span></a>
+            <a class="game-link" href="/games/3bingo.html" data-slug="3bingo"><i class="ti ti-disc game-icon"></i><span>Bingo</span></a>
+            <a class="game-link" href="/games/4metro.html" data-slug="4metro"><i class="ti ti-train game-icon"></i><span>Metro</span></a>
+            <a class="game-link" href="/games/5inter.html" data-slug="5inter"><i class="ti ti-world game-icon"></i><span>International</span></a>
+            <a class="game-link" href="/games/6gold.html" data-slug="6gold"><i class="ti ti-coin game-icon"></i><span>Gold</span></a>
+            <a class="game-link" href="/games/7O6.html" data-slug="7O6"><i class="ti ti-number-6-small game-icon"></i><span>06</span></a>
+            <a class="game-link" href="/games/8jackpot.html" data-slug="8jackpot"><i class="ti ti-coins game-icon"></i><span>Jackpot</span></a>
+            <a class="game-link" href="/games/9clubmaster.html" data-slug="9clubmaster"><i class="ti ti-cards game-icon"></i><span>Clubmaster</span></a>
+            <a class="game-link" href="/games/10super.html" data-slug="10super"><i class="ti ti-bolt game-icon"></i><span>Super</span></a>
+            <a class="game-link" href="/games/11tota.html" data-slug="11tota"><i class="ti ti-refresh game-icon"></i><span>Tota</span></a>
+            <a class="game-link" href="/games/12mark-II.html" data-slug="12mark-II"><i class="ti ti-shield game-icon"></i><span>Mark II</span></a>
+            <a class="game-link" href="/games/13vag.html" data-slug="13vag"><i class="ti ti-puzzle game-icon"></i><span>Vag</span></a>
+            <a class="game-link" href="/games/14enugu.html" data-slug="14enugu"><i class="ti ti-map-pin game-icon"></i><span>Enugu</span></a>
+            <a class="game-link" href="/games/15lucky.html" data-slug="15lucky"><i class="ti ti-clover game-icon"></i><span>Lucky</span></a>
+            <a class="game-link" href="/games/16fairchance.html" data-slug="16fairchance"><i class="ti ti-scale game-icon"></i><span>Fairchance</span></a>
+            <a class="game-link" href="/games/17royal.html" data-slug="17royal"><i class="ti ti-crown game-icon"></i><span>Royal</span></a>
+            <a class="game-link" href="/games/18msp.html" data-slug="18msp"><i class="ti ti-calendar-event game-icon"></i><span>Monday Special</span></a>
+            <a class="game-link" href="/games/19luckyG.html" data-slug="19luckyG"><i class="ti ti-clover game-icon"></i><span>Lucky-G</span></a>
+            <a class="game-link" href="/games/20midweek.html" data-slug="20midweek"><i class="ti ti-calendar-week game-icon"></i><span>Midweek</span></a>
+            <a class="game-link" href="/games/21fortune.html" data-slug="21fortune"><i class="ti ti-coins game-icon"></i><span>Fortune</span></a>
+            <a class="game-link" href="/games/22bonanza.html" data-slug="22bonanza"><i class="ti ti-confetti game-icon"></i><span>Bonanza</span></a>
+            <a class="game-link" href="/games/23premierking.html" data-slug="23premierking"><i class="ti ti-crown game-icon"></i><span>Premier King</span></a>
+            <a class="game-link" href="/games/24national.html" data-slug="24national"><i class="ti ti-trophy game-icon"></i><span>National</span></a>
+            <a class="game-link" href="/games/25aseda.html" data-slug="25aseda"><i class="ti ti-heart-handshake game-icon"></i><span>Aseda</span></a>
+         </div>
+      </nav>
 
-   
- 
-    <main id="gameContainer"></main>
+      <div class="desktop-main-column">
+         <h1 id="desktopGameHeading">DIAMOND Results</h1>
+         <div class="status-message" id="statusMessage">Loading Diamond results...</div>
+         <main id="gameContainer"></main>
+      </div>
 
-    <footer class="site-footer">
+      <aside class="desktop-promo-column">
+         <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-desktop-promo" data-banner-position="desktop_promo_column">
+            <img src="/assets/megapot/900_x_750.png" alt="Megapot - Play to Win" class="promo-image">
+         </a>
+         <div class="promo-ticker">
+            <span>🎰 Play to win ₦300,000,000</span>
+            <span>🍀 New draw every week</span>
+            <span>💸 Paid out instantly </span>
+         </div>
+      </aside>
+   </div>
+
+   <!-- ============ MOBILE VIEW ============ -->
+   <div class="mobile-view">
+
+      <a class="megapot-teaser-bar" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-teaser" data-banner-position="header_teaser">
+         <span>Megapot &middot; play to win &#8358;300M</span>
+         <i class="ti ti-arrow-right"></i>
+      </a>
+
+      <div class="mobile-page-heading">
+         <h2 id="mobileGameHeading">Diamond Results</h2>
+      </div>
+
+      <div class="mobile-game-switcher" id="mobileGameSwitcher">
+         <a class="game-chip" href="/games/1diamond.html" data-slug="1diamond">Diamond</a>
+         <a class="game-chip" href="/games/2peoples.html" data-slug="2peoples">Peoples</a>
+         <a class="game-chip" href="/games/3bingo.html" data-slug="3bingo">Bingo</a>
+         <a class="game-chip" href="/games/4metro.html" data-slug="4metro">Metro</a>
+         <a class="game-chip" href="/games/5inter.html" data-slug="5inter">International</a>
+         <a class="game-chip" href="/games/6gold.html" data-slug="6gold">Gold</a>
+         <a class="game-chip" href="/games/7O6.html" data-slug="7O6">06</a>
+         <a class="game-chip" href="/games/8jackpot.html" data-slug="8jackpot">Jackpot</a>
+         <a class="game-chip" href="/games/9clubmaster.html" data-slug="9clubmaster">Clubmaster</a>
+         <a class="game-chip" href="/games/10super.html" data-slug="10super">Super</a>
+         <a class="game-chip" href="/games/11tota.html" data-slug="11tota">Tota</a>
+         <a class="game-chip" href="/games/12mark-II.html" data-slug="12mark-II">Mark II</a>
+         <a class="game-chip" href="/games/13vag.html" data-slug="13vag">Vag</a>
+         <a class="game-chip" href="/games/14enugu.html" data-slug="14enugu">Enugu</a>
+         <a class="game-chip" href="/games/15lucky.html" data-slug="15lucky">Lucky</a>
+         <a class="game-chip" href="/games/16fairchance.html" data-slug="16fairchance">Fairchance</a>
+         <a class="game-chip" href="/games/17royal.html" data-slug="17royal">Royal</a>
+         <a class="game-chip" href="/games/18msp.html" data-slug="18msp">Monday Special</a>
+         <a class="game-chip" href="/games/19luckyG.html" data-slug="19luckyG">Lucky-G</a>
+         <a class="game-chip" href="/games/20midweek.html" data-slug="20midweek">Midweek</a>
+         <a class="game-chip" href="/games/21fortune.html" data-slug="21fortune">Fortune</a>
+         <a class="game-chip" href="/games/22bonanza.html" data-slug="22bonanza">Bonanza</a>
+         <a class="game-chip" href="/games/23premierking.html" data-slug="23premierking">Premier King</a>
+         <a class="game-chip" href="/games/24national.html" data-slug="24national">National</a>
+         <a class="game-chip" href="/games/25aseda.html" data-slug="25aseda">Aseda</a>
+      </div>
+
+      <div class="mobile-status-message" id="mobileStatusMessage">Loading Diamond results...</div>
+      <main id="mobileGameContainer"></main>
+
+      <!-- Megapot in-content banner: injected by loadGame.js right after the results table -->
+   </div>
+
+   <footer class="site-footer">
       <div class="footer-content">
          <div class="footer-section">
             <h3>About Our Results</h3>
@@ -266,19 +270,7 @@
       </div>
    </footer>
 
-   
-     <!-- Baba-Ijebu_Result_Website -->
-         <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3639147338737274"
-            data-ad-slot="1474692093"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-         <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-         </script>
-
-
-    <script type="module" src="/scripts/loaders/loadGame.js"></script>
+    <script type="module" src="/scripts/loaders/loadEachGame.js"></script>
+    <script src="../scripts/modal.js"></script>
 </body>
 </html>
