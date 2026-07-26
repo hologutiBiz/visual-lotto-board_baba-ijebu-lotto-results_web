@@ -21,6 +21,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
    <link rel="stylesheet" href="../style.css">
    <link rel="stylesheet" href="/styles/tableStyles.css" />
+   <link rel="stylesheet" href="/styles/megapot.css">
 
    <!-- Ad Click Prevention Script -->
    <script>
@@ -181,65 +182,6 @@
     .play-store-badge:hover {
         transform: scale(1.05); /* Slight pop effect on hover */
     }
-
-    /* Megapot in-content banner (game pages - no sidebar offset needed) */
-.megapot-banner-wrapper {
-    text-align: center;
-    margin: 1.5rem auto;
-}
-.megapot-banner {
-    max-width: 90%;
-    height: auto;
-    border-radius: 8px;
-}
-.megapot-desktop-banner { display: none; }
-.megapot-mobile-banner { display: inline-block; width: 300px; }
-
-@media (min-width: 769px) {
-    .megapot-desktop-banner { display: inline-block; width: 728px; }
-    .megapot-mobile-banner { display: none; }
-}
-
-/* Megapot sticky banner */
-.megapot-sticky-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px 30px;
-}
-.megapot-sticky-banner img {
-    height: auto;
-    max-width: 100%;
-}
-.megapot-sticky-desktop { display: none; width: 728px; }
-.megapot-sticky-mobile { display: inline-block; width: 320px; }
-
-@media (min-width: 769px) {
-    .megapot-sticky-desktop { display: inline-block; }
-    .megapot-sticky-mobile { display: none; }
-}
-
-.megapot-close {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    cursor: pointer;
-    line-height: 1;
-}
    </style>
 </head>
 <body>
