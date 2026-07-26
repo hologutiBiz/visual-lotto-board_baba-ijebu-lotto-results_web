@@ -468,3 +468,66 @@ textarea {
             width: 140px;
         }
     }
+
+/* Megapot in-content banner */
+.megapot-banner-wrapper {
+    text-align: center;
+    margin: 1.5rem auto;
+}
+.megapot-banner {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+.megapot-desktop-banner { display: none; }
+.megapot-mobile-banner { display: inline-block; width: 300px; }
+
+/* Desktop: offset to clear the fixed sidebar, matches .home-page-main */
+@media (min-width: 769px) {
+    .megapot-banner-wrapper {
+        margin-left: 210px;
+    }
+    .megapot-desktop-banner { display: inline-block; width: 728px; }
+    .megapot-mobile-banner { display: none; }
+}
+
+/* Megapot sticky banner (bottom of screen, all devices) */
+.megapot-sticky-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 30px;
+}
+.megapot-sticky-banner img {
+    height: auto;
+    max-width: 100%;
+}
+.megapot-sticky-desktop { display: none; width: 728px; }
+.megapot-sticky-mobile { display: inline-block; width: 320px; }
+
+@media (min-width: 769px) {
+    .megapot-sticky-desktop { display: inline-block; }
+    .megapot-sticky-mobile { display: none; }
+}
+
+.megapot-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+}

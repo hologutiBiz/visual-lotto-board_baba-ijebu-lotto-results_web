@@ -11,7 +11,6 @@
       </script>      
    <!-- End Google Tag Manager -->
 
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274" crossorigin="anonymous"></script>
 
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -182,6 +181,65 @@
     .play-store-badge:hover {
         transform: scale(1.05); /* Slight pop effect on hover */
     }
+
+    /* Megapot in-content banner (game pages - no sidebar offset needed) */
+.megapot-banner-wrapper {
+    text-align: center;
+    margin: 1.5rem auto;
+}
+.megapot-banner {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+.megapot-desktop-banner { display: none; }
+.megapot-mobile-banner { display: inline-block; width: 300px; }
+
+@media (min-width: 769px) {
+    .megapot-desktop-banner { display: inline-block; width: 728px; }
+    .megapot-mobile-banner { display: none; }
+}
+
+/* Megapot sticky banner */
+.megapot-sticky-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 30px;
+}
+.megapot-sticky-banner img {
+    height: auto;
+    max-width: 100%;
+}
+.megapot-sticky-desktop { display: none; width: 728px; }
+.megapot-sticky-mobile { display: inline-block; width: 320px; }
+
+@media (min-width: 769px) {
+    .megapot-sticky-desktop { display: inline-block; }
+    .megapot-sticky-mobile { display: none; }
+}
+
+.megapot-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+}
    </style>
 </head>
 <body>
@@ -246,10 +304,10 @@
          <div class="app-download-section">
             <p style="font-size: 0.8rem; margin-bottom: 8px; color: #fff;">Get the App for instant alerts:</p>
             <a href="https://play.google.com/store/apps/details?id=com.visuallottoboard.babaijeburesults" target="_blank">
-               <img class="play-store-badge" 
+                <img class="play-store-badge" 
                      src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
                      alt="Get it on Google Play"
-               >
+                >
             </a>
          </div>
 
@@ -285,18 +343,8 @@
       </div>
    </footer>
 
-   <!-- Baba-Ijebu_Result_Website -->
-         <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3639147338737274"
-            data-ad-slot="1474692093"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-         <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-         </script>
-
-    <script type="module" src="/scripts/loaders/loadGame.js"></script>
+    <!-- <script type="module" src="/scripts/loaders/loadGame.js"></script> -->
+     <script type="module" src="/scripts/loaders/loadEachGame.js"></script>
     <script src="../scripts/modal.js"></script>
 </body>
 </html>

@@ -6,9 +6,23 @@
          })(window,document,'script','dataLayer','GTM-M9582TWK');</script>
       <!-- End Google Tag Manager -->
 
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274" crossorigin="anonymous"></script>
+
+
 
 
       <!-- Baba-Ijebu_Result_Website -->
+         <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3639147338737274"
+            data-ad-slot="1474692093"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+         <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+
+         <!-- Baba-Ijebu_Result_Website -->
          <ins class="adsbygoogle"
             style="display:block"
             data-ad-client="ca-pub-3639147338737274"
