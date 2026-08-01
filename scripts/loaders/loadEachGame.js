@@ -41,13 +41,13 @@ async function loadSingleGame() {
         desktopStatus.textContent = `Loading ${config.label} results...`;
         if (mobileStatus) mobileStatus.textContent = `Loading ${config.label} results...`;
 
-        const allResults = await fetchGameResults();
+        const allResults = await fetchGameResults(config.key, new Date().getFullYear());
         const data = allResults[config.key];
 
         if (!data) {
-        desktopContainer.innerHTML = `<p>No ${config.label} data found.</p>`;
-        if (mobileContainer) mobileContainer.innerHTML = `<p>No ${config.label} data found.</p>`;
-        return;
+            desktopContainer.innerHTML = `<p>No ${config.label} data found.</p>`;
+            if (mobileContainer) mobileContainer.innerHTML = `<p>No ${config.label} data found.</p>`;
+            return;
         }
 
         // Render the same data into both the desktop and mobile containers
