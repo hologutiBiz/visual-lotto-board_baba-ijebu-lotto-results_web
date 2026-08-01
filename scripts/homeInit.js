@@ -58,30 +58,23 @@ loadResults();
 async function loadResults() {
     try {
         status.textContent = '🔄 Loading latest lotto results...';
-        // if (subnav) subnav.style.display = "none";
-
-        // Fetch only current year for homepage optimization
         const currentYear = new Date().getFullYear();
-        const allResults = await fetchGameResults(null, currentYear);
+        // const allResults = await fetchGameResults(null, currentYear);
 
-        if (!allResults || Object.keys(allResults).length === 0) {
-            showError("⚠️ No results available at the moment. Please check back soon.");
-            return;
-        }
+       for (const cfg of gameConfigs) {
+            const allResults = await fetchGameResults(cfg.key, currentYear);
 
-        gameConfigs.forEach(cfg => {
+            if (!allResults || Object.keys(allResults).length === 0) continue;
+
             const data = allResults[cfg.key];
-            if (!data) return;
+            if (!data) continue;
 
             const section = document.createElement('section');
             section.classList.add('game-section');
             section.innerHTML = `<h2>${cfg.label}</h2>`;
             renderGameResults(cfg.key, data, section);
             container.appendChild(section);
-
-            const gameName = document.createElement("span");
-            gameName.textContent = `${cfg.label}`;
-        });
+        }
         
         status.textContent = '';
     } catch (err) {
