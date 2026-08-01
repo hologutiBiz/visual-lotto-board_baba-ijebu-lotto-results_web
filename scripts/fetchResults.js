@@ -12,52 +12,57 @@ function normalizeGameName(gameName) {
         "king": "premier king"   
     }
 
-    const normalized = normalizeGameName.toLowerCase();
+    const normalized = gameName.toLowerCase();
     return nameMap[normalized] || nameMap[gameName] || normalized;
 }
 
-export async function fetchGameResults(game = null, year = null) {
+export async function fetchGameResults(game, year) {
+    if (!game || !year) {
+        throw new Error("Both game and year are required");
+    }
+
     try {
         // Build query parameters
-        const params = new URLSearchParams();
-        if (game) params.append('game', game);
-        if (year) params.append('year', year);
+        const params = new URLSearchParams({ game, year });
+        // if (game) params.append('game', game);
+        // if (year) params.append('year', year);
         
-        const url = params.toString() 
-            ? `${RESULT_API}?${params.toString()}` 
-            : RESULT_API;
+        // const url = params.toString() 
+        //     ? `${RESULT_API}?${params.toString()}` 
+        //     : RESULT_API;
+        const url = `${RESULT_API}?${params.toString()}`;
 
         const res = await fetch(url, {
             method: "GET",
             headers: {
               'Content-Type': 'application/json'
             },
-      });
+        });
 
-      // Detect network-level issue (res undefined or failed fetch)
-      if (!res) {
-          throw new Error("Network failure");
-      }
+        // Detect network-level issue (res undefined or failed fetch)
+        if (!res) {
+            throw new Error("Network failure");
+        }
 
-      // Detect server-side error
-      if (!res.ok) {
-          if (res.status === 403) {
-              throw new Error("Access denied");
-          } else if (res.status === 404) {
-              throw new Error("Results not found");
-          } else {
-              throw new Error(`Server error: ${res.status}`);
-          }
-      }
+        // Detect server-side error
+        if (!res.ok) {
+            if (res.status === 403) {
+                throw new Error("Access denied");
+            } else if (res.status === 404) {
+                throw new Error("Results not found");
+            } else {
+                throw new Error(`Server error: ${res.status}`);
+            }
+        }
 
-      const data = await res.json();
+        const data = await res.json();
 
-      if (!data || Object.keys(data).length === 0) {
-          displayErrorMessage("No results available at this time.");
-      }
+        if (!data || Object.keys(data).length === 0) {
+            displayErrorMessage("No results available at this time.");
+        }
 
-      const transformedData = transformToYearlyStructure(data);
-      return transformedData;
+        const transformedData = transformToYearlyStructure(data);
+        return transformedData;
 
     } catch (err) {
         let message = "An unknown error occurred.";
