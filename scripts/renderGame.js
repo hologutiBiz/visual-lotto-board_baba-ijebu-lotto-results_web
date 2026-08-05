@@ -43,20 +43,66 @@ export function renderGameResults(gameKey, yearlyData, container) {
     async function renderYear(selectedYear) {
         resultsContainer.innerHTML = '<p style="text-align:center;padding:20px;">Loading...</p>';
 
-        // Fetch from server if we don't already have this year
-        if (!fetchedYears[selectedYear]) {
-            const result = await fetchGameResults(gameKey, selectedYear);
-            // result shape: { [gameKey]: { [year]: [...draws] } }
-            const draws = result?.[gameKey]?.[selectedYear];
-            fetchedYears[selectedYear] = draws || [];
-        }
+        try {
+            // Fetch from server if we don't already have this year
+            if (!fetchedYears[selectedYear]) {
+                const result = await fetchGameResults(gameKey, selectedYear);
+                // result shape: { [gameKey]: { [year]: [...draws] } }
+                const draws = result?.[gameKey]?.[selectedYear];
+                fetchedYears[selectedYear] = draws || [];
+            }
 
-        const draws = fetchedYears[selectedYear];
-        resultsContainer.innerHTML = '';
+            const draws = fetchedYears[selectedYear];
+            resultsContainer.innerHTML = '';
 
-        if (!draws || draws.length === 0) {
-            resultsContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: #666;">No results available for ${selectedYear}</p>`;
-            return;
+            if (!draws || draws.length === 0) {
+                resultsContainer.innerHTML = `<p style="text-align: center; padding: 20px; color: #666;">No results available for ${selectedYear}</p>`;
+                return;
+            }
+
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <caption class="game-year">${selectedYear}</caption>
+                <thead>
+                    <tr>
+                        <th class="serial-num">S/N</th>
+                        <th>DATE</th>
+                        <th colspan="5">WINNING</th>
+                        <th colspan="5">MACHINE</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            `;
+
+            const tbody = table.querySelector('tbody');
+
+            draws.forEach(draw => {
+                const winning = draw.winningNumbers
+                    .map(n => `<td class="winning">${n.number || '—'}</td>`)
+                    .join('');
+
+                const machine = draw.machineNumbers
+                    .map((n, i) => {
+                        const extra = i === 0 ? 'fbm' : '';
+                        return `<td class="machine ${extra}">${n.number || '—'}</td>`;
+                    })
+                    .join('');
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="serial-num">${draw.serialNumber || '—'}</td>
+                    <td class="days"><small>${draw.date || '—'}</small></td>
+                    ${winning}
+                    ${machine}
+                `;
+
+                tbody.appendChild(row);
+            });
+
+            resultsContainer.appendChild(table);
+        } catch (err) {
+            console.error('Game year fetch failed:', err);
+            resultsContainer.innerHTML = `<p style="text-align:center;padding:20px;color:#c00;">Unable to load ${selectedYear} results. Please check your connection or try again later.</p>`;
         }
 
         const table = document.createElement('table');

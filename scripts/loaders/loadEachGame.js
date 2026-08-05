@@ -41,12 +41,16 @@ async function loadSingleGame() {
         desktopStatus.textContent = `Loading ${config.label} results...`;
         if (mobileStatus) mobileStatus.textContent = `Loading ${config.label} results...`;
 
-        const allResults = await fetchGameResults(config.key, new Date().getFullYear());
-        const data = allResults[config.key];
+        const currentYear = new Date().getFullYear();
+        const allResults = await fetchGameResults(config.key, currentYear);
+        const data = allResults?.[config.key];
 
         if (!data) {
-            desktopContainer.innerHTML = `<p>No ${config.label} data found.</p>`;
-            if (mobileContainer) mobileContainer.innerHTML = `<p>No ${config.label} data found.</p>`;
+            const message = `No ${config.label} data found.`;
+            desktopContainer.innerHTML = `<p>${message}</p>`;
+            if (mobileContainer) mobileContainer.innerHTML = `<p>${message}</p>`;
+            desktopStatus.textContent = '';
+            if (mobileStatus) mobileStatus.textContent = '';
             return;
         }
 
@@ -58,7 +62,11 @@ async function loadSingleGame() {
         if (mobileStatus) mobileStatus.textContent = '';
     } catch (err) {
         console.error("Fetch error:", err);
-        showError(`Unable to load ${config.label} results due to a network or server issue.`);
+        const message = err?.message || `Unable to load ${config.label} results due to a network or server issue.`;
+        desktopStatus.textContent = message;
+        if (mobileStatus) mobileStatus.textContent = message;
+        desktopContainer.innerHTML = `<p class="error-message">${message}</p>`;
+        if (mobileContainer) mobileContainer.innerHTML = `<p class="error-message">${message}</p>`;
     }
 }
 

@@ -56,11 +56,6 @@ export async function fetchGameResults(game, year) {
         }
 
         const data = await res.json();
-
-        if (!data || Object.keys(data).length === 0) {
-            displayErrorMessage("No results available at this time.");
-        }
-
         const transformedData = transformToYearlyStructure(data);
         return transformedData;
 
@@ -73,14 +68,14 @@ export async function fetchGameResults(game, year) {
             message = "Access to results is restricted.";
         } else if (err.message.includes("Results not found")) {
             message = "Lotto results could not be found.";
-        } else if (err.message.includes("Server error")) {
+        } else if (err.message.includes("Server error") || err.message.includes("CORS policy")) {
             message = "There’s a problem fetching results — please try again later.";
         } else if (err.message.includes("Network failure")) {
             message = "Network failure — check your connection.";
         }
 
-        displayErrorMessage(message);
         console.error("⚠️ Error:", err.message);
+        throw new Error(message);
     }
 }
 
