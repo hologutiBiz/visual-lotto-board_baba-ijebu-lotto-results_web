@@ -1,6 +1,5 @@
-// const RESULT_API = "https://api.babaijebu.visuallottoboard.com/publicwebgameresults";
-const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results"; // Fullback
-// https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results
+const RESULT_API = "https://api.babaijebu.visuallottoboard.com/publicwebgameresults";
+// const RESULT_API = "https://visual-lotto-board-results-file.netlify.app/.netlify/functions/get-babaijebu-results"; // Fullback
 
 function normalizeGameName(gameName) {
     const nameMap = {

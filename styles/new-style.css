@@ -1,0 +1,639 @@
+/* ============================================================
+   BASE / RESET
+   ============================================================ */
+* {
+   margin: 0;
+   padding: 0;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.home-page-header {
+  position: sticky;
+  top: 0;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  background: #2282c7;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brand-wrapper img {
+  border-radius: 50%;
+}
+.brand-name-wrapper {
+  display: block;
+}
+.brand-name-wrapper .brand-name {
+  font-weight: 200;
+  font-size: 18px;
+}
+.brand-name-wrapper .brand-name-vlb {
+  display: block;
+  font-size: 13px;
+}
+
+.actions button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.actions button:hover {
+  background: #004c99;
+}
+
+/* Buy Ticket button in header */
+.buy-ticket-btn {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #daa520;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.green-lotto-link {
+  color: #008000;
+  text-decoration: none;
+  text-align: center;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 2px 0 2px 0 rgb(146, 146, 146);
+  font-weight: 200;
+  font-size: small;
+}
+
+.socials a {
+  color: #fff;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* ============================================================
+   MOBILE HEADER CARD + TEASER BAR (new design)
+   ============================================================ */
+@media (max-width: 768px) {
+    .mobile-header-card {
+        margin: 8px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .mobile-header-card .home-page-header {
+        margin-bottom: 0;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .brand-wrapper { 
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .brand-props {
+        display: flex; 
+        align-items: center; 
+        gap: 10px;
+    }
+
+    /* Show the hamburger icon on mobile */
+    .menu-toggle {
+        display: block !important;
+    }
+
+    /* Actions hidden by default, shown only when menu is toggled open */
+    .actions {
+        display: none !important;
+        width: 100%;
+        margin: 12px auto 0;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .actions.menu-open {
+        display: flex !important;
+    }
+    .actions button,
+    .actions .buy-ticket-btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+/* Megapot teaser bar under the header (mobile only) */
+/* .megapot-teaser-bar {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.megapot-teaser-bar i { 
+    font-size: 16px; 
+} */
+
+
+@media (max-width: 768px) {
+    .mobile-page-heading { 
+        display: block; 
+    }
+    /* .megapot-teaser-bar { 
+        display: flex; 
+    } */
+}
+
+/* Mobile page heading */
+.mobile-page-heading {
+    display: none;
+    text-align: center;
+    padding: 12px 16px 4px;
+}
+.mobile-page-heading h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #222;
+}
+
+
+/* ============================================================
+   DESKTOP / MOBILE VIEW SWITCH
+   ============================================================ */
+.desktop-view { display: none; }
+.mobile-view { display: block; }
+
+@media (min-width: 769px) {
+    .desktop-view {
+        display: grid;
+        grid-template-columns: 220px 1fr 280px;
+        gap: 24px;
+        align-items: start;
+        padding: 24px;
+        background-color: #f9f9f9;
+    }
+    .mobile-view { display: none; }
+}
+
+/* Desktop: Left sidebar */
+.desktop-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: sticky;
+    top: 90px;
+    background-color: #fff;
+}
+.desktop-game-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Desktop: Middle column */
+.desktop-main-column {
+    min-width: 0;
+}
+.desktop-main-column .home-page-main {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+    background-color: #fff;
+}
+
+/* Desktop: Right promo column */
+.desktop-promo-column {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
+}
+.promo-image {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 12px;
+    animation: promoPulse 2.5s ease-in-out infinite;
+}
+@keyframes promoPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(218, 165, 32, 0); }
+    50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(218, 165, 32, 0.4); }
+}
+
+/* .promo-ticker {
+    width: 100%;
+    max-width: 260px;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 28px;
+    position: relative;
+}
+.promo-ticker span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 28px;
+    opacity: 0;
+    animation: promoTicker 9s infinite;
+}
+.promo-ticker span:nth-child(1) { animation-delay: 0s; }
+.promo-ticker span:nth-child(2) { animation-delay: 3s; }
+.promo-ticker span:nth-child(3) { animation-delay: 6s; }
+@keyframes promoTicker {
+    0%, 5% { opacity: 0; transform: translateY(10px); }
+    10%, 28% { opacity: 1; transform: translateY(0); }
+    33%, 100% { opacity: 0; transform: translateY(-10px); }
+} */
+
+/* ============================================================
+   MOBILE VIEW LAYOUT
+   ============================================================ */
+.mobile-nav {
+    padding-bottom: 4rem;
+}
+.mobile-game-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 16px;
+}
+.mobile-game-links .game-link {
+    flex-direction: column;
+    color: #2282c7;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+}
+.mobile-game-links .game-link:hover {
+    background-color: #e0e0e0;
+}
+.mobile-game-links .green-lotto-link {
+    grid-column: 1 / -1;
+}
+.each-game-active-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+}
+.each-game-active-wrapper a {
+  white-space: nowrap;
+}
+
+/* ============================================================
+   SIDEBAR NAV (desktop fixed sidebar / mobile full-page menu)
+   ============================================================ */
+/* .counterpart {
+  color: #daa520;
+  width: fit-content;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.counterpart-icon {
+  display: none;
+} */
+
+/* .frequent-number {
+  color: #add8e6;
+  padding: 5px 10px;
+  margin: 10px auto;
+  background-color: #222;
+} */
+
+/* ============================================================
+   GAME LINKS (shared base style — used by desktop sidebar,
+   mobile grid, and popular-games cards)
+   ============================================================ */
+.game-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    box-shadow: 2px 0 2px 0 rgba(51, 51, 51, 0.1);
+    color: #222;
+    transition: background 0.2s ease;
+}
+.game-link:hover {
+    background-color: #f0f0f0;
+}
+.game-link.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Tabler icons used for each game tile */
+.game-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* Popular games section (mobile view — visibility controlled by parent .mobile-view/.desktop-view toggle) */
+.section-label {
+    font-size: 13px;
+    color: #666;
+    padding: 0 16px;
+    margin: 12px 0 8px;
+}
+.popular-games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 16px;
+}
+.popular-games-grid .game-link {
+    flex-direction: column;
+    border: 2px solid #2282c7;
+    border-radius: 10px;
+    background: #fff;
+    padding: 16px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.status-message {
+  text-align: center;
+  margin: 20px 0 auto;
+  font-size: 16px;
+}
+
+.home-page-main {
+  display: flex;
+  flex-wrap: nowrap;
+  max-inline-size: 100%;
+  margin-left: 210px;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  scroll-behavior: smooth; 
+}
+
+.update-meta {
+  background-color: #f9f9f9;
+  border-left: 4px solid #2282c7;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.game-section {
+  width: 550px;
+  height: 100%;
+  text-align: center;
+}
+.game-section h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================================
+   MODAL (Report an Issue)
+   ============================================================ */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+}
+.channel-options a {
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+textarea {
+  width: 100%;
+  min-height: 120px;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.modal-actions button {
+  color: #fff;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.send-report-btn {
+  background-color: green;
+}
+.close-modal-btn {
+  background-color: #ff0000;
+}
+
+#errorReportLink {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin-top: 50px;
+  line-height: 1.6;
+}
+
+.footer-content {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #2282c7;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #2282c7;
+}
+
+.disclaimer-box {
+    font-size: 0.8rem;
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border-left: 4px solid #2282c7;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.85rem;
+}
+
+.eighteen-plus {
+    display: inline-block;
+    background: #2282c7;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.app-download-section {
+    margin-top: 15px;
+}
+
+.play-store-badge {
+    width: 160px;
+    height: auto;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.play-store-badge:hover {
+    transform: scale(1.05);
+}
+
+
+/* ============================================================
+   MOBILE OVERRIDES (existing site behavior below 768px)
+   ============================================================ */
+@media screen and (max-width: 885px) {
+    .table-wrapper {
+        flex-direction: column;
+        gap: 2rem; 
+    }
+   .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+   }
+   .social-footer {
+      justify-content: center;
+      align-items: center;
+      gap: 1.9rem;
+   }
+   .footer-section a {
+      justify-content: center;
+   }
+    .social-icons {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+   }
+
+   /* #megapotClose {
+        visibility: hidden;
+   } */
+}
+
+

@@ -1,0 +1,102 @@
+/* ============================================================
+   MEGAPOT: IN-CONTENT BANNER (placed inside the games grid)
+   ============================================================ */
+.megapot-banner-wrapper {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+.megapot-banner {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+.megapot-desktop-banner { display: none; }
+.megapot-mobile-banner { display: inline-block; width: 300px; }
+
+@media (min-width: 769px) {
+    .megapot-desktop-banner { display: inline-block; width: 728px; }
+    .megapot-mobile-banner { display: none; }
+    /* On desktop, the in-content banner needs to clear the fixed sidebar */
+    .megapot-banner-wrapper { margin-left: 210px; }
+}
+
+/* ============================================================
+   MEGAPOT: STICKY BOTTOM BANNER
+   Homepage: hidden by default, slides in via .visible (scroll-triggered)
+   Game subpages (loadGame.js): visible by default, uses .collapsed toggle
+   Both behaviors share the base positioning rules below.
+   ============================================================ */
+.megapot-sticky-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: linear-gradient(180deg, #111 0%, #000 100%);
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px;
+    min-height: 60px;
+    transition: padding 0.25s ease, height 0.25s ease, transform 0.3s ease;
+}
+
+/* Homepage: hidden until scrolled past the in-content banner */
+.megapot-sticky-banner.hidden-initial {
+    transform: translateY(100%);
+}
+.megapot-sticky-banner.hidden-initial.visible {
+    transform: translateY(0);
+}
+
+.megapot-sticky-banner img {
+    height: auto;
+    max-width: 100%;
+}
+.megapot-sticky-desktop { display: none; width: 728px; }
+.megapot-sticky-mobile { display: inline-block; width: 320px; }
+
+@media (min-width: 769px) {
+    .megapot-sticky-desktop { display: inline-block; }
+    .megapot-sticky-mobile { display: none; }
+}
+
+.megapot-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* Collapsed state (game subpages only): shrink to a slim tab */
+.megapot-collapsed-label {
+    display: none;
+}
+.megapot-sticky-banner.collapsed {
+    min-height: 32px;
+    padding: 4px 40px;
+}
+.megapot-sticky-banner.collapsed a {
+    display: none;
+}
+.megapot-sticky-banner.collapsed .megapot-collapsed-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
