@@ -10,17 +10,6 @@
 /* ============================================================
    HEADER
    ============================================================ */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
-}
-
 .home-page-header {
   position: sticky;
   top: 0;
@@ -40,12 +29,27 @@
   align-items: center;
   gap: 0.5rem;
 }
-.brand-wrapper img {
+.brand-props img {
   border-radius: 50%;
 }
-.brand-wrapper .brand-name {
-  font-weight: 200;
-  font-size: 24px;
+.brand-props {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.brand-names-wrap span {
+    display: block;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
 }
 
 .actions button {
@@ -113,11 +117,11 @@
         justify-content: space-between;
     }
 
-    .brand-props {
+    /* .brand-props {
         display: flex; 
         align-items: center; 
         gap: 10px;
-    }
+    } */
 
     /* Show the hamburger icon on mobile */
     .menu-toggle {

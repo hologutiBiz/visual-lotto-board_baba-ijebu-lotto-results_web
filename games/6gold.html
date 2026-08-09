@@ -89,24 +89,29 @@
 
    <!-- ============ SHARED HEADER ============ -->
    <header class="home-page-header" id="homePageHeader">
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-         <i class="fas fa-bars"></i>
-      </button>
+            <div class="brand-wrapper">
+                <div class="brand-props">
+                    <a href="#" aria-current="page">
+                        <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1785993030/logo-BLR-web_tzs7fw.png" alt="Logo" width="40"/>
+                    </a>
+                    <div class="brand-names-wrap">
+                        <span class="brand-name">Visual Lotto Board</span>
+                        <span class="brand-name_product">Baba Ijebu Lotto Results</span>
+                    </div>
+                </div>
+            
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
 
-      <div class="brand-wrapper">
-         <a href="/" aria-current="page">
-            <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1749649983/VLB_logo_gpiyzr.png" alt="Logo" width="40"/>
-         </a>
-         <span class="brand-name">Visual Lotto Board</span>
-      </div>
-
-      <div class="actions" id="headerActions">
-         <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
-         <button class="login-btn" id="loginBtn">🔐 Login</button>
-         <button class="report-btn" id="reportBtn">📄 Report</button>
-         <a class="buy-ticket-btn" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" id="megapot-link-menu" data-banner-position="menu">🎟️ Buy Ticket</a>
-      </div>
-   </header>
+            <div class="actions" id="headerActions">
+                  <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
+                  <button class="login-btn" id="loginBtn">🔐 Login</button>
+                  <button class="report-btn" id="reportBtn">📄 Report</button>
+                  <a class="buy-ticket-btn" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" id="megapot-link-menu" data-banner-position="menu">🎟️ Buy Ticket</a>
+            </div>
+    </header>
 
    <!-- Game switcher links, reused in both desktop sidebar and mobile chip strip.
         loadGame.js marks whichever data-slug matches the current page as "active". -->

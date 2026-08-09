@@ -9,17 +9,6 @@
 /* ============================================================
    HEADER
    ============================================================ */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 1001;
-}
-
 .home-page-header {
   position: sticky;
   top: 0;
@@ -39,12 +28,27 @@
   align-items: center;
   gap: 0.5rem;
 }
-.brand-wrapper img {
+.brand-props img {
   border-radius: 50%;
 }
-.brand-wrapper .brand-name {
-  font-weight: 200;
-  font-size: 24px;
+.brand-props {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.brand-names-wrap span {
+    display: block;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
 }
 
 .actions button {
@@ -110,7 +114,7 @@
     /* Show the hamburger icon on mobile */
     .menu-toggle {
         display: block !important;
-        order: -1;
+        /* order: -1; */
     }
 
     /* Actions hidden by default, shown only when menu is toggled open */
@@ -764,8 +768,10 @@ textarea {
     flex-direction: column;
     margin-bottom: 0;
     margin-top: 0;
+    /* justify-content: space-between; */
+    /* background-color: red; */
   }
-  .socials {
+  /* .socials {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -774,7 +780,7 @@ textarea {
   .socials a {
       margin: 20px auto; 
       font-size: 22px;
-  }
+  } */
   .update-meta {
     margin: auto auto 0;
   }
