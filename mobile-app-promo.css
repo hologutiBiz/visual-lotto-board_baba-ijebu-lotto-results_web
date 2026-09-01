@@ -1,0 +1,92 @@
+/* Mobile App Promo Card */
+.mobile-app-promo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, #0288d1 0%, #1565c0 100%);
+  color: #ffffff;
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin: 16px 0 24px 0;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.25);
+  box-sizing: border-box;
+}
+
+/* Badge Styling */
+.mobile-app-promo-card .badge-live {
+  display: inline-block;
+  background-color: #ffeb3b;
+  color: #0d47a1;
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Typography */
+.mobile-app-promo-card .promo-content {
+  flex: 1;
+}
+
+.mobile-app-promo-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.mobile-app-promo-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.92;
+  line-height: 1.4;
+  color: #e3f2fd;
+}
+
+/* Download Button */
+.mobile-app-promo-card .app-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover & Active States */
+.mobile-app-promo-card .app-download-btn:hover {
+  background-color: #f5f5f5;
+  color: #0d47a1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-app-promo-card .app-download-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustment for extra small screens (below 380px width) */
+@media (max-width: 380px) {
+  .mobile-app-promo-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .mobile-app-promo-card .app-download-btn {
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+  }
+}

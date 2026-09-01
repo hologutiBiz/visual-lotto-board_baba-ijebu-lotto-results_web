@@ -14,15 +14,18 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Baba Ijebu (Premier) Lotto Results | Visual Lotto Board</title>
-   <meta name="description" content="View updated lotto results from 25 games including Diamond, Peoples, Bingo, Jackpot, Super, National, and more. Powered by Visual Lotto Board.">
+   <meta name="description" content="View updated lotto results from 25 games including Diamond, Peoples, Bingo, Jackpot, Super, National, and more. Download the mobile app for real-time draw updates and moving numbers analysis.Powered by Visual Lotto Board.">
    <meta name="author" content="Visual Lotto Result" />
+   <meta name="google-play-app" content="app-id=com.visuallottoboard.babaijeburesults">
 
+   <!-- Facebook-->
    <meta property="og:title" content="Baba Ijebu (Premier) Lotto Results | Visual Lotto Board">
    <meta property="og:description" content="View updated lotto results from 25 games including Diamond, Peoples, Bingo, JAckpot, Super, National, and more. Powered by Visual Lotto Board."> 
    <meta property="og:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1751113131/vlb-v2-free-user-cover_fsl1sl.png"> 
    <meta property="og:image:alt" content="Visual Lotto Baord logo, name and picture of game available on the webpage"> 
    <meta property="og:url" content="https://premier-lotto-babaijebu-results.visuallottoboard.com/">
 
+   <!-- Twitter-->
    <meta name="twitter:card" content="summary_large_image">
    <meta name="twitter:site" content="@VisuaLottoBoard">
    <meta name="twitter:title" content="Baba Ijebu (Premier) Lotto Results | Visual Lotto Board">
@@ -40,6 +43,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.44.0/tabler-icons.min.css">
    <link rel="stylesheet" href="new-style.css">
    <link rel="stylesheet" href="/styles/tableStyles.css" />
+   <link rel="stylesheet" href="mobile-app-promo.css">
   
    <!-- email js -->
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -52,6 +56,39 @@
    </script>
    <!-- email js end-->
 
+   <!-- Schema.org JSON-LD -->
+   <script type="application/ld+json">
+      [
+         {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Visual Lotto Board - Baba Ijebu Results",
+            "url": "https://premier-lotto-babaijebu-results.visuallottoboard.com/"
+         },
+         {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Baba Ijebu Lotto Results App",
+            "operatingSystem": "ANDROID",
+            "applicationCategory": "GameApplication",
+            "image": "https://res.cloudinary.com/ddatfadov/image/upload/v1787251890/logo-BLR-App-ic_launcher_jjwf7z.png",
+            "screenshot": "https://res.cloudinary.com/ddatfadov/image/upload/v1787252603/BLR_daily-result-screen_f7xzfh.png",
+            "downloadUrl": "https://play.google.com/store/apps/details?id=com.visuallottoboard.babaijeburesults",
+            "offers": {
+               "@type": "Offer",
+               "price": "0",
+               "priceCurrency": "NGN"
+            },
+            "featureList": [
+               "Real-time live draw results",
+               "Moving Numbers",
+               "Games Result",
+               "Game schedule countdown timers"
+            ]
+         }
+      ]
+   </script>
+
 </head>
 <body>
 
@@ -62,21 +99,21 @@
 
    <!-- ============ SHARED HEADER (used by both desktop and mobile views) ============ -->
     <header class="home-page-header" id="homePageHeader">
-            <div class="brand-wrapper">
-                <div class="brand-props">
-                    <a href="#" aria-current="page">
-                        <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1785993030/logo-BLR-web_tzs7fw.png" alt="Logo" width="40"/>
-                    </a>
-                    <div class="brand-names-wrap">
-                        <span class="brand-name">Visual Lotto Board</span>
-                        <span class="brand-name_product">Baba Ijebu Lotto Results</span>
-                    </div>
+        <div class="brand-wrapper">
+            <div class="brand-props">
+                <a href="#" aria-current="page">
+                    <img class="brand-logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1785993030/logo-BLR-web_tzs7fw.png" alt="Logo" width="40"/>
+                </a>
+                <div class="brand-names-wrap">
+                    <span class="brand-name">Visual Lotto Board</span>
+                    <span class="brand-name_product">Baba Ijebu Lotto Results</span>
                 </div>
-            
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
+        
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
 
         <div class="actions" id="headerActions">
             <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
@@ -88,7 +125,6 @@
 
    <!-- ============ DESKTOP VIEW ============ -->
    <div class="desktop-view">
-
       <!-- Left: Sidebar -->
       <nav class="desktop-sidebar" id="desktopSidebar">
          <a class="counterpart" href="https://lottoclassificationchart.visuallottoboard.com/" target="_blank">
@@ -155,6 +191,18 @@
       <div class="mobile-page-heading">
          <h2>Baba Ijebu Lotto Results</h2>
       </div>
+
+        <!-- Mobile App promo-->
+        <div class="mobile-app-promo-card">
+            <div class="promo-content">
+                <span class="badge-live">LIVE DRAWS</span>
+                <h3>Get Real-Time Results & Moving Numbers</h3>
+                <p>Looking for instant draw updates? Download our Android App.</p>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.visuallottoboard.babaijeburesults" target="_blank" rel="noopener" class="app-download-btn">
+                Get App
+            </a>
+        </div>
 
       <nav class="mobile-nav" id="mobileNav">
          <div class="popular-games-wrapper">

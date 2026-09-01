@@ -362,3 +362,24 @@
    <script src="/scripts/modal.js"></script>
 </body>
 </html>
+
+
+
+// Megapot
+<!-- Header Teaser -->
+   <a class="megapot-teaser-bar" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-teaser" data-banner-position="header_teaser">
+      span>Megapot &middot; play to win &#8358;300M</span>
+      <i class="ti ti-arrow-right"></i>
+   </a>
+
+
+<aside class="desktop-promo-column">
+   <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-desktop-promo" data-banner-position="desktop_promo_column">
+      <img src="/assets/megapot/900_x_750.png" alt="Megapot - Play to Win" class="promo-image">
+   </a>
+   <div class="promo-ticker">
+      <span>Play to win ₦300,000,000</span>
+      <span>New draw every week</span>
+      <span>Paid out instantly </span>
+   </div>
+</aside>
