@@ -30,8 +30,8 @@ document.querySelectorAll('.desktop-game-links .game-link, .mobile-game-switcher
 if (desktopHeading) desktopHeading.innerHTML = `${config.label} <span style="color:#ff0000;">Results</span>`;
 if (mobileHeading) mobileHeading.textContent = `${config.label} Results`;
 
-// 🎯 Inject Megapot banners (in-content + sticky) — mobile view only
-injectMegapotBanners();
+// Inject Megapot banners (in-content + sticky) — mobile view only
+// injectMegapotBanners();
 
 // Load game results directly (no session check)
 loadSingleGame();
@@ -93,42 +93,42 @@ function initMenuToggle() {
 initMenuToggle();
 
 // Megapot banner injection (mobile view only — desktop uses the dedicated promo column)
-function injectMegapotBanners() {
-    const MEGAPOT_LINK = "https://megapot.io/?utm_source=visuallotto&ref=NFHHTA";
-    const mobileView = document.querySelector('.mobile-view');
-    if (!mobileView || !mobileContainer) return;
+// function injectMegapotBanners() {
+//     const MEGAPOT_LINK = "https://megapot.io/?utm_source=visuallotto&ref=NFHHTA";
+//     const mobileView = document.querySelector('.mobile-view');
+//     if (!mobileView || !mobileContainer) return;
 
-    // --- In-content banner: insert right after the results table ---
-    const inContentWrapper = document.createElement('div');
-    inContentWrapper.className = 'megapot-banner-wrapper';
-    inContentWrapper.id = 'megapotInArticle';
-    inContentWrapper.innerHTML = `
-        <a href="${MEGAPOT_LINK}" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-inarticle" data-banner-position="in_article">
-        <img src="/assets/megapot/900_x_750.png" alt="Megapot - Play to Win" class="megapot-banner">
-        </a>
-    `;
-    mobileContainer.insertAdjacentElement('afterend', inContentWrapper);
+//     // --- In-content banner: insert right after the results table ---
+//     const inContentWrapper = document.createElement('div');
+//     inContentWrapper.className = 'megapot-banner-wrapper';
+//     inContentWrapper.id = 'megapotInArticle';
+//     inContentWrapper.innerHTML = `
+//         <a href="${MEGAPOT_LINK}" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-inarticle" data-banner-position="in_article">
+//         <img src="/assets/megapot/900_x_750.png" alt="Megapot - Play to Win" class="megapot-banner">
+//         </a>
+//     `;
+//     mobileContainer.insertAdjacentElement('afterend', inContentWrapper);
 
-    // --- Sticky bottom banner: always visible, collapses to a slim tab on tap (pulse animation applied) ---
-    const stickyBanner = document.createElement('div');
-    stickyBanner.className = 'megapot-sticky-banner';
-    stickyBanner.id = 'megapotSticky';
-    stickyBanner.innerHTML = `
-        <a href="${MEGAPOT_LINK}" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-sticky" data-banner-position="sticky">
-        <img src="/assets/megapot/2184_x_270.png" alt="Megapot - Play to Win" class="megapot-sticky-desktop megapot-pulse">
-        <img src="/assets/megapot/960_x_150.png" alt="Megapot - Play to Win" class="megapot-sticky-mobile megapot-pulse">
-        </a>
-        <button class="megapot-close" id="megapotClose" aria-label="Collapse ad">▼</button>
-        <div class="megapot-collapsed-label">
-        <span>🎰 Megapot</span>
-        </div>
-    `;
-    document.body.appendChild(stickyBanner);
+//     // --- Sticky bottom banner: always visible, collapses to a slim tab on tap (pulse animation applied) ---
+//     const stickyBanner = document.createElement('div');
+//     stickyBanner.className = 'megapot-sticky-banner';
+//     stickyBanner.id = 'megapotSticky';
+//     stickyBanner.innerHTML = `
+//         <a href="${MEGAPOT_LINK}" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-sticky" data-banner-position="sticky">
+//         <img src="/assets/megapot/2184_x_270.png" alt="Megapot - Play to Win" class="megapot-sticky-desktop megapot-pulse">
+//         <img src="/assets/megapot/960_x_150.png" alt="Megapot - Play to Win" class="megapot-sticky-mobile megapot-pulse">
+//         </a>
+//         <button class="megapot-close" id="megapotClose" aria-label="Collapse ad">▼</button>
+//         <div class="megapot-collapsed-label">
+//         <span>🎰 Megapot</span>
+//         </div>
+//     `;
+//     document.body.appendChild(stickyBanner);
 
-    document.getElementById('megapotClose')?.addEventListener('click', () => {
-        stickyBanner.classList.toggle('collapsed');
-        const btn = document.getElementById('megapotClose');
-        btn.textContent = stickyBanner.classList.contains('collapsed') ? '▲' : '▼';
-        btn.setAttribute('aria-label', stickyBanner.classList.contains('collapsed') ? 'Expand ad' : 'Collapse ad');
-    });
-}
+//     document.getElementById('megapotClose')?.addEventListener('click', () => {
+//         stickyBanner.classList.toggle('collapsed');
+//         const btn = document.getElementById('megapotClose');
+//         btn.textContent = stickyBanner.classList.contains('collapsed') ? '▲' : '▼';
+//         btn.setAttribute('aria-label', stickyBanner.classList.contains('collapsed') ? 'Expand ad' : 'Collapse ad');
+//     });
+// }

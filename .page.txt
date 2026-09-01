@@ -366,6 +366,9 @@
 
 
 // Megapot
+   <!-- Nav bar: Buy ticket -->
+   <a class="buy-ticket-btn" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" id="megapot-link-menu" data-banner-position="menu">🎟️ Buy Ticket</a>
+
 <!-- Header Teaser -->
    <a class="megapot-teaser-bar" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-teaser" data-banner-position="header_teaser">
       span>Megapot &middot; play to win &#8358;300M</span>
