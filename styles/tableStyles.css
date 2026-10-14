@@ -316,3 +316,8 @@ border-right: 1px solid red;
             font-size: 18px;
         }  
     }
+
+
+/*--------------- AdSense Slot -------------- */
+.ad-slot { min-height: 280px; margin: 32px 0; text-align: center; clear: both; }
+.ad-label { display: block; font-size: 11px; color: #777; margin-bottom: 6px; }
