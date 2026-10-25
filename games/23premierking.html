@@ -11,8 +11,6 @@
       </script>      
    <!-- End Google Tag Manager -->
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274" crossorigin="anonymous"></script>
-
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,64 +22,23 @@
    <link rel="stylesheet" href="/styles/tableStyles.css" />
    <link rel="stylesheet" href="/styles/megapot.css">
 
-   <!-- Ad Click Prevention Script -->
-   <script>
-     (function() {
-       const AD_CLICK_COOLDOWN = 60000;
-       const MAX_CLICKS_PER_HOUR = 3;
-       const STORAGE_KEY = 'adClickTracker';
-       function initAdClickPrevention() {
-         let clickData = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-         const now = Date.now();
-         if (clickData.lastCleanup && now - clickData.lastCleanup > 3600000) {
-           clickData = { lastCleanup: now };
-           localStorage.setItem(STORAGE_KEY, JSON.stringify(clickData));
-         }
-         document.addEventListener('click', function(e) {
-           const clickedElement = e.target.closest('.adsbygoogle, [data-ad-client], [data-ad-slot], ins[class*="ads"]');
-           if (clickedElement) handleAdClick();
-         }, true);
-       }
-       function handleAdClick() {
-         const now = Date.now();
-         let clickData = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"clicks":[]}');
-         clickData.clicks = (clickData.clicks || []).filter(time => now - time < 3600000);
-         if (clickData.clicks.length > 0) {
-           const lastClickTime = clickData.clicks[clickData.clicks.length - 1];
-           const timeSinceLastClick = now - lastClickTime;
-           if (timeSinceLastClick < AD_CLICK_COOLDOWN) {
-             const remainingTime = Math.ceil((AD_CLICK_COOLDOWN - timeSinceLastClick) / 1000);
-             showNotification(`Please wait ${remainingTime}s before clicking another ad`);
-             return false;
-           }
-         }
-         if (clickData.clicks.length >= MAX_CLICKS_PER_HOUR) {
-           showNotification('You have reached the maximum ad clicks this hour.');
-           return false;
-         }
-         clickData.clicks.push(now);
-         localStorage.setItem(STORAGE_KEY, JSON.stringify(clickData));
-       }
-       function showNotification(message) {
-         const notification = document.createElement('div');
-         notification.style.cssText = 'position:fixed;top:20px;right:20px;background:#ff6b6b;color:white;padding:15px 20px;border-radius:5px;z-index:10000;font-family:Arial,sans-serif;font-size:14px;box-shadow:0 2px 10px rgba(0,0,0,0.2);animation:slideIn 0.3s ease';
-         notification.textContent = message;
-         document.body.appendChild(notification);
-         setTimeout(() => {
-           notification.style.animation = 'slideOut 0.3s ease';
-           setTimeout(() => notification.remove(), 300);
-         }, 3000);
-       }
-       const style = document.createElement('style');
-       style.textContent = '@keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes slideOut{from{transform:translateX(0);opacity:1}to{transform:translateX(400px);opacity:0}}';
-       document.head.appendChild(style);
-       if (document.readyState === 'loading') {
-         document.addEventListener('DOMContentLoaded', initAdClickPrevention);
-       } else {
-         initAdClickPrevention();
-       }
-     })();
-   </script>
+   <!-- Hostname Guard -->
+    <script>
+        (function () {
+            // 1. Which address is this page being served from?
+            var h = location.hostname;
+            window.__adsOk = h === 'visuallottoboard.com' || h.endsWith('.visuallottoboard.com');
+
+            if (!window.__adsOk) return;
+
+            var s = document.createElement('script');
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274';
+            document.head.appendChild(s);
+        })();
+    </script>
+        <!-- Hostname Guard ends-->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -197,17 +154,19 @@
    </div>
 
     <!-- AdSense snippet-->
-    <!-- Baba-Ijebu_Result_Website -->
-    <ins 
-        class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3639147338737274"
-        data-ad-slot="1474692093"
-        data-ad-format="auto"
-        data-full-width-responsive="true">
-    </ins>
+        <!-- Baba-Ijebu_Result_Website -->
+     <div class="ad-slot">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3639147338737274"
+            data-ad-slot="1474692093"
+            data-ad-format="auto"
+            data-full-width-responsive="true">
+        </ins>
+    </div>
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        if (window.__adsOk) { (adsbygoogle = window.adsbygoogle || []).push({}); }
     </script>
     <!-- AdSense snippet ends-->
 
