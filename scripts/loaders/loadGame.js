@@ -7,7 +7,7 @@ const container = document.getElementById('gameContainer');
 const status = document.getElementById('statusMessage');
 const nav = document.querySelector('.each-game-active-wrapper');
 
-// 🧠 Detect game from URL
+// Detect game from URL
 const slug = window.location.pathname.split('/').pop().replace('.html', '');
 const config = gameConfigs.find(cfg => cfg.slug === slug);
 
@@ -25,7 +25,7 @@ gameConfigs.forEach(cfg => {
   nav.appendChild(link);
 });
 
-// 🔁 Load game results directly (no session check)
+// Load game results directly (no session check)
 loadSingleGame();
 
 async function loadSingleGame() {
@@ -47,7 +47,7 @@ async function loadSingleGame() {
   }
 }
 
-// 📬 Subscribe & Login buttons (Optional UI links)
+// Subscribe & Login buttons (Optional UI links)
 function linkButton() {
   document.querySelector("#subscribeBtn")?.addEventListener("click", () => {
     window.location.href = "https://app.visuallottoboard.com/subscription";
