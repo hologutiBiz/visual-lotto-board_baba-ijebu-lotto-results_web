@@ -56,6 +56,24 @@
    </script>
    <!-- email js end-->
 
+   <!-- Hostname Guard -->
+      <script>
+        (function () {
+            // 1. Which address is this page being served from?
+            var h = location.hostname;
+            window.__adsOk = h === 'visuallottoboard.com' || h.endsWith('.visuallottoboard.com');
+
+            if (!window.__adsOk) return;
+
+            var s = document.createElement('script');
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274';
+            document.head.appendChild(s);
+        })();
+        </script>
+        <!-- Hostname Guard ends-->
+
    <!-- Schema.org JSON-LD -->
    <script type="application/ld+json">
       [
@@ -119,7 +137,6 @@
             <button class="sub-btn" id="subscribeBtn">📬 Subscribe</button>
             <button class="login-btn" id="loginBtn">🔐 Login</button>
             <button class="report-btn" id="reportBtn">📄 Report</button>
-            <a class="buy-ticket-btn" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" id="megapot-link-menu" data-banner-position="menu">🎟️ Buy Ticket</a>
         </div>
     </header>
 
@@ -168,26 +185,10 @@
          <main class="home-page-main" id="homePageContainer"></main>
       </div>
 
-      <!-- Right: Megapot promo column -->
-      <aside class="desktop-promo-column">
-         <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-desktop-promo" data-banner-position="desktop_promo_column">
-            <img src="/assets/megapot/900_x_750.png" alt="Megapot - Play to Win" class="promo-image">
-         </a>
-         <div class="promo-ticker">
-            <span>Play to win ₦300,000,000</span>
-            <span>New draw every week</span>
-            <span>Paid out instantly</span>
-         </div>
-      </aside>
    </div>
 
    <!-- ============ MOBILE VIEW ============ -->
    <div class="mobile-view">
-      <a class="megapot-teaser-bar" href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-teaser" data-banner-position="header_teaser">
-         <span>Megapot &middot; play the internet lottery</span>
-         <i class="ti ti-arrow-right"></i>
-      </a>
-
       <div class="mobile-page-heading">
          <h2>Baba Ijebu Lotto Results</h2>
       </div>
@@ -236,13 +237,6 @@
             <a class="game-link" href="/games/5inter.html" target="_blank"><i class="ti ti-world game-icon"></i><span>International</span></a>
             <a class="game-link" href="/games/6gold.html" target="_blank"><i class="ti ti-coin game-icon"></i><span>Gold</span></a>
 
-            <!-- Megapot in-content banner: after the first 6 games -->
-            <div class="megapot-banner-wrapper" id="megapotInArticle">
-               <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-inarticle" data-banner-position="in_article">
-                  <img src="/assets/megapot/900_x_750.png" alt="Megapot - Play to Win" class="megapot-banner">
-               </a>
-            </div>
-
             <a class="game-link" href="/games/7O6.html" target="_blank"><i class="ti ti-number-6-small game-icon"></i><span>06</span></a>
             <a class="game-link" href="/games/8jackpot.html" target="_blank"><i class="ti ti-coins game-icon"></i><span>Jackpot</span></a>
             <a class="game-link" href="/games/9clubmaster.html" target="_blank"><i class="ti ti-cards game-icon"></i><span>Clubmaster</span></a>
@@ -285,6 +279,23 @@
          </div>
       </div>
    </div>
+
+   <!-- AdSense snippet-->
+        <!-- Baba-Ijebu_Result_Website -->
+     <div class="ad-slot">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3639147338737274"
+            data-ad-slot="1474692093"
+            data-ad-format="auto"
+            data-full-width-responsive="true">
+        </ins>
+    </div>
+    <script>
+        if (window.__adsOk) { (adsbygoogle = window.adsbygoogle || []).push({}); }
+    </script>
+    <!-- AdSense snippet ends-->
 
    <!-- ============ SHARED FOOTER ============ -->
    <footer class="site-footer">
@@ -348,14 +359,6 @@
         <p>&copy; <span id="year"></span> Visual Lotto Board. All Rights Reserved.</p>
       </div>
    </footer>
-
-   <!-- Megapot Sticky Banner (mobile only — desktop has the dedicated promo column instead) -->
-   <div class="megapot-sticky-banner hidden-initial" id="megapotSticky">
-      <a href="https://megapot.io/?utm_source=visuallotto&ref=NFHHTA" target="_blank" rel="noopener sponsored" aria-label="Megapot - Play the Internet Lottery" id="megapot-link-sticky" data-banner-position="sticky">
-         <img src="/assets/megapot/960_x_150.png" alt="Megapot - Play to Win">
-      </a>
-      <button class="megapot-close" id="megapotClose" aria-label="Close ad">&times;</button>
-   </div>
 
    <script type="module" src="/scripts/homeInit.js"></script>
    <script src="/scripts/modal.js"></script>
